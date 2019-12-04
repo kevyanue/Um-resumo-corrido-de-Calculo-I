@@ -1,0 +1,1815 @@
+\documentclass[14pt]{extreport}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{relsize}
+\usepackage{graphicx}
+\usepackage[thinlines]{easytable}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+
+\title{Resumo não didático e não demostrado de calculo - aceite se quiser}
+\author{Kevyan Uehara}
+\date{Novembro 2019}
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Corolário}[theorem]
+\newtheorem{lemma}{Lema}
+\theoremstyle{definition}
+\newtheorem{definition}{Definição}
+\newtheorem{proposition}{Proposição}
+\newtheorem*{remark}{Observação}
+\newtheorem{method}{Método}
+\newtheorem{example}{Exemplo}
+
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\chapter*{Prefácio}
+
+\begin{enumerate}
+    \item Não tem demonstrações
+    \item Não tem gráficos
+    \item Não tem todo o conteúdo
+    \item Não tem exemplos
+    \item Não tem aplicações
+    \item Contém: regras, formulas
+    \item mais tarde: macetes e mnemônicos
+    \item Boa sorte
+\end{enumerate}
+
+\chapter{Identidades trigonométricas}
+
+\begin{flalign}
+    sen^2(x) + cos^2(x) = 1 &&
+\end{flalign}
+\begin{flalign}
+    sec^2(x) = 1 + tan^2(x) &&
+\end{flalign}
+\begin{flalign}
+    tan^2(x) = sec^2(x) - 1 &&
+\end{flalign}
+\begin{flalign}
+    sen^2(x) = \frac{1}{2} ( 1 - cos(2x)) &&
+\end{flalign}
+\begin{flalign}
+    cos^2(x) = \frac{1}{2} ( 1 - sen(2x)) &&
+\end{flalign}
+
+\begin{flalign}
+    cos(x)sen(x) = \frac{1}{2} sen(2x) &&
+\end{flalign}
+
+\begin{flalign}
+    sen(a)cos(b) = 
+    \frac{1}{2} 
+    [
+    sen(a - b)
+    +
+    sen(a + b
+    ] &&
+\end{flalign}
+
+\begin{flalign}
+    sen(a)sen(b) = 
+    \frac{1}{2} 
+    [
+    cos(a - b)
+    -
+    cos(a + b
+    ] &&
+\end{flalign}
+
+
+\begin{flalign}
+    sen(a)sen(b) = 
+    \frac{1}{2} 
+    [
+    cos(a - b)
+    +
+    cos(a + b
+    ] &&
+\end{flalign}
+
+
+
+\chapter{Limites}
+
+\section{Regras}
+
+Seja \(C\) uma constante qualquer e suponha que 
+\noindent
+\begin{equation*}
+    \exists L_f ; \lim_{x \to a} f(x) = L_f
+    \quad
+    e
+    \quad
+    \exists L_g ; \lim_{x \to a} f(x) = L_g
+\end{equation*}
+    
+\begin{flalign}
+    \lim_{ x \to a } 
+        \left[
+            f(x) \pm g(x)
+        \right]
+    = 
+        \left[
+            \lim_{x \to a} f(x)
+        \right]
+            \pm 
+        \left[
+            \lim_{x \to a} f(x)]
+        \right]
+    = 
+        L_f + L_g &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{ x \to a } 
+        \left[
+            C.f(x)
+        \right]
+    = 
+        C . \left[
+                \lim_{x \to a} f(x)
+            \right]
+    = 
+        C.L_f &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{ x \to a } 
+        \left[
+            f(x) . g(x)
+        \right]
+    = 
+        \left[
+            \lim_{x \to a} f(x)
+        \right]
+        .
+        \left[
+            \lim_{x \to a} g(x)
+        \right]
+    = 
+        L_f . L_g &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{ x \to a } 
+        \left[
+            \frac{f(x)}{g(x)} 
+        \right]
+    = 
+        \left[
+            \frac{
+                \lim_{x \to a} f(x)
+            }{
+                \lim_{x \to a} g(x)
+            }    
+        \right]
+    = 
+        \left[
+            \frac{
+                L_f 
+            }{
+                L_g
+            }
+        \right]        
+    ,
+        \lim_{x \to a} g(x) \neq 0 &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{ x \to a } 
+        \left[
+            f(x)
+        \right]^n
+    = 
+        \left[
+            \lim_{x \to a} f(x)
+        \right]^n
+    = 
+        [L_f]^n &&
+\end{flalign}
+
+\subsection{Limite da composta}
+
+Sejam \(f\) e \(g\) duas funções tais que
+\begin{equation*}
+    \lim_{x \to a} g(x) = L_g 
+    \quad e \quad
+    \lim_{x \to a} f(x) = L_f
+\end{equation*}
+Se, para \(x\) próximos de a e \(x \neq a\) temos
+\begin{equation}
+    g(x) \in Df \quad e \quad g(x) \neq L_g
+    \implies \lim_{x \to a} (f \circ g)(x) = L_f 
+\end{equation}
+
+\subsection{Limite da composta (feat. continuidade)}
+Se
+\begin{enumerate}
+    \item \(\lim_{x \to a} g(x) = L_g\)
+    \item \(f\) \text{contínua em} \(L_g\)
+    \item \(g(x) \in Df\) para \(x\) próximos de \(a\) e \(x \neq a\)
+\end{enumerate}
+Então
+\begin{equation}
+    \lim_{x \to a} f(g(x)) 
+    = 
+    f \left(
+        \;
+        \lim_{x \to a} g(x)  
+        \;
+      \right)
+    = f (L_g)  
+\end{equation}
+a função \(f\) ``saí pra fora'' do limite
+\subsection{Mudança de variável}
+Considerando o limite:
+\begin{equation*}
+    \lim_{x \to a} f(g(x))
+\end{equation*}
+Se definirmos \(u = g(x)\),
+temos que
+\begin{equation}\label{md}
+    x \to a,\, u = g(x) \to b
+\end{equation}
+O que nos da que
+\begin{equation*}
+    \lim_{x \to a} f(g(x)) 
+    \stackrel{\ref{md}}{=}
+    \lim_{u \to b} f(u) 
+\end{equation*}
+Ou seja, nosso limite dado em função de \(x\) está agora em função de \(u\)
+\section{Limites fundamentais}
+
+\begin{flalign}
+    \lim_{x \to 0} \frac{\sin{x}}{x} = 1 &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to \pm \infty}\left(1+\frac{1}{x}\right)^{x} = e &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to 0}\frac{a^{x}-1}{x} = \ln{a} &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to 0}\frac{a^{x}-1}{x}=\ln a &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to 0^+}\frac{1}{x} = +\infty &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to 0^-}\frac{1}{x} = -\infty &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to \pm \infty}\frac{1}{x} = 0 &&
+\end{flalign}
+
+
+\subsection{Outros limites}
+
+\begin{flalign}
+    \lim_{x\to \pm \infty}\left(1+\frac{a}{x}\right)^{bx}= e^{ab} &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x\to \pm \infty} a^{\frac{1}{x}} = 1 &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x\to \pm \infty} \frac{\ln{n}}{n} = 0 &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to 0} \frac{1 - \cos{x}}{x} = 0 &&
+\end{flalign}
+
+\section{Regras do infinito}
+Aqui considere:
+\begin{enumerate}
+    \item L é um numero qualquer \textbf{Diferente de 0}
+    \item \(L^+\) é um numero qualquer \textbf{estritamente} positivo
+    \item \(L^-\) é um numero qualquer \textbf{estritamente} negativo
+    \item \(\pm \infty\) como algum limite de alguma função \(f\)
+\end{enumerate}
+Temos que:
+\begin{flalign}
+    \infty + \infty = \infty &&
+\end{flalign}
+\begin{flalign}
+    \infty . \infty = \infty &&
+\end{flalign}
+\begin{flalign}
+    L + \infty = \infty &&
+\end{flalign}
+\begin{flalign}
+    \infty - L = \infty &&
+\end{flalign}
+\begin{flalign}
+    L^+ . \infty = \infty &&
+\end{flalign}
+\begin{flalign}
+    L^- . \infty = -\infty &&
+\end{flalign}
+\begin{flalign}
+    L^+ . -\infty = -\infty &&
+\end{flalign}
+\begin{flalign}
+    L^- . -\infty = +\infty &&
+\end{flalign}
+\begin{flalign}
+    -\infty - \infty = -\infty &&
+\end{flalign}
+\begin{flalign}
+    -\infty . (- \infty) = +\infty &&
+\end{flalign}
+
+\subsection{Indeterminações com infinitos}
+
+Assuma o mesmo que a seção anterior.
+As seguintes expressões são indet.:
+
+\begin{flalign}
+    \infty - \infty &&
+\end{flalign}
+\begin{flalign}
+    0 . \infty &&
+\end{flalign}
+\begin{flalign}
+    \frac{\pm\infty}{\pm\infty} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{0}{0} &&
+\end{flalign}
+
+\begin{flalign}
+    1^{\infty} &&
+\end{flalign}
+\begin{flalign}
+    \infty^{0} &&
+\end{flalign}
+\begin{flalign}
+    0^{0} &&
+\end{flalign}
+
+\section{Teorema que antecede o confronto}
+se temos que 
+\begin{equation*}
+    f(x) \leq g(x)
+\end{equation*}
+então
+\begin{equation}
+    \lim_{x \to a} f(x) 
+    \leq 
+    \lim_{x \to a} g(x)
+\end{equation}
+(se os limites existirem)
+\section{Teorema do confronto}
+sejam \(f\), \(g\) e \(h\) funções. Se temos que:
+\begin{enumerate}
+    \item \[f(x) \leq g(x) \leq h(x)\]
+    \item \[\lim_{x \to a} f(x) = L = \lim_{x \to a} h(x)\] 
+\end{enumerate}
+Temos que
+\begin{equation}
+    \lim_{x \to a} f(x)
+    \leq 
+    \lim_{x \to a} g(x) 
+    \leq 
+    \lim_{x \to a} h(x) 
+\end{equation}
+\begin{equation}
+    L 
+    \leq 
+    \lim_{x \to a} g(x) 
+    \leq 
+    L 
+\end{equation}
+O que implica que
+\begin{equation*}
+    \lim_{x \to a} g(x) = L
+\end{equation*}
+
+
+\section{Lei de L'Hôspital}
+
+sejam \(f\) e \(g\) funções diferenciáveis em um intervalo aberto \(I\) e algum \(c \in I\). Se:
+\begin{enumerate}
+    \item{ 
+        \[
+            \lim_{x \to c} f(x) = \lim_{x \to c} g(x)  = 0 
+        \]
+    }
+    Ou
+    \item{ 
+        \[
+            \lim_{x \to c} f(x) = \lim_{x \to c} g(x)  = \pm \infty 
+        \]
+    }
+\end{enumerate}
+ou seja, se tivermos que:
+\begin{equation*}
+    \lim_{x \to c} \frac{f(x)}{g(x)} = \frac{f(c)}{g(c)} = \frac{0}{0} 
+    \quad \text{ou} \quad
+    \lim_{x \to c} \frac{f(x)}{g(x)} = \frac{f(c)}{g(c)} = \pm \frac{\infty}{\infty}
+\end{equation*}
+Então
+\begin{equation}
+    \lim_{x \to c} \frac{f(x)}{g(x)} = 
+    \lim_{x \to c} \frac{f'(x)}{g'(x)} 
+\end{equation}
+    
+\chapter{Continuidade}
+
+\section{Continuidades}
+
+\subsection{Continuidade num ponto}
+\begin{definition}
+    Dizemos que \(f\) é continua em um ponto \(a\) se:
+    
+    \begin{equation}
+       \lim_{x \to a} f(x) = f(a) 
+    \end{equation}
+    
+\end{definition}
+
+\subsection{Continuidade a direita}
+
+\begin{definition}
+    Se
+    \begin{equation}
+       \lim_{x \to a^+} f(x) = f(a)  
+    \end{equation}
+    Então f é continua a direita do ponto a
+\end{definition}
+
+\subsection{Continuidade a esquerda}
+
+\begin{definition}
+    Se
+    \begin{equation}
+       \lim_{x \to a^-} f(x) = f(a)  
+    \end{equation}
+    Então f é continua a esquerda do ponto a
+\end{definition}
+
+\subsection{Continuidade em intervalos}
+
+\begin{definition}
+    Dizemos que \(f\) é continua em um intervalo aberto \( I = (a, b)\) se:
+    
+    \begin{equation}
+       \lim_{x \to c} f(x) = f(c),\quad \forall c \in I
+    \end{equation}
+    
+\end{definition}
+
+\begin{definition}
+    Dizemos que \(f\) é continua em um intervalo fechado \( I = [a, b]\) se:
+    
+    \begin{equation}
+       \lim_{x \to c} f(x) = f(c),\quad \forall c \in I
+    \end{equation}
+    
+\end{definition}
+
+
+\section{Descontinuidades}
+
+\subsection{Descontinuidades removíveis}
+
+\begin{definition}
+    Se
+    \begin{equation*}
+        \exists L; \quad \lim_{x \to a} f(x) = L
+    \end{equation*}
+    E
+    \begin{center}
+        \(f(a) \neq L\) ou \(f(a)\) não existe
+    \end{center}
+    Então a descontinuidade é removível se redefinirmos \(f(a)\) como sendo \(L\)
+\end{definition}
+
+\subsection{Descontinuidades essenciais}
+
+
+\begin{definition}
+    Se
+    \begin{equation*}
+        \exists L; \quad \lim_{x \to a} f(x) = L
+    \end{equation*}
+    E
+    \begin{center}
+        \(f(a) \neq L\) ou \(f(a)\) não existe
+    \end{center}
+    Então a descontinuidade é removível se redefinirmos \(f(a)\) como sendo \(L\)
+\end{definition}
+
+\subsubsection{Descontinuidade de pulo}
+
+\begin{definition}
+    Se
+    \begin{equation}
+       \lim_{x \to a^+} f(x) \neq \lim_{x \to a^-}
+    \end{equation}
+    Então dizemos que a função tem descontinuidade do tipo pulo
+\end{definition}
+
+\subsubsection{Descontinuidade infinita}
+
+\begin{definition}
+    Se
+    \begin{equation}
+       \lim_{x \to a^{\pm}} f(x) = \pm \infty
+    \end{equation}
+    Então dizemos que a função tem descontinuidade do tipo infinito
+\end{definition}
+
+
+\section{Regras de continuidade}
+
+Sejam \(f\) e \(g\) funções contínuas em um intervalo \(I\) e \(c\) uma constante qualquer.
+Vale que são continuas as funções:
+
+\begin{flalign}
+    (f \pm g)(x) &&
+\end{flalign}
+\begin{flalign}
+    (c.f)(x) &&
+\end{flalign}
+\begin{flalign}
+    (f.g)(x) &&
+\end{flalign}
+\begin{flalign}
+    \left(
+        \frac{f}{g}
+    \right)
+    (x), \; g(x) \neq 0, \forall x \in I &&
+\end{flalign}
+\begin{flalign}
+    (f \circ g)(x), \text{se f contínua em g(x)}, \forall x \in I &&
+\end{flalign}
+\begin{flalign}
+    (f^{-1})(x),\; \text{se f é injetora}  &&
+\end{flalign}
+Também são continuas as funções
+\begin{enumerate}
+    \item Polinomiais
+    \item Racionais
+    \item Exponenciais e Logarítmicas
+    \item Trigonométricas
+\end{enumerate}
+    
+\chapter{Derivadas}
+
+\begin{equation}
+f'(x) 
+=
+\lim_{x \to 0} \frac{
+    f(x + h) - f(x)
+}{
+    h
+}
+\end{equation}
+Ou
+\begin{equation}
+f'x 
+= 
+\lim_{x \to a} \frac{
+    f(x) - f(a)
+}{
+    x - a
+}    
+\end{equation}
+
+
+\subsection*{Notações}
+
+temos as seguintes notações para a primeira derivada e as derivadas superiores:
+\begin{flalign}
+    f'(x), f''(x), f'''(x), ... &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} f, \frac{d^2}{dx^2} f, \frac{d^3}{dx^3}f , ... &&
+\end{flalign}
+\begin{flalign}
+    D^1 f(x), D^2 f(x), D^3 f(x), ... &&
+\end{flalign}
+\begin{flalign}
+    f^{(1)}, f^{(2)}, f^{(3)}, ... &&
+\end{flalign}
+OBS: Note que a \(n\) derivada \(f^{\textbf{(n)}}(x)\) é diferente da \(n\) composta \(f^{\textbf{n}}(x)\) apesar das notações serem parecidas. 
+
+\section{Diferenciabilidade e continuidade}
+
+\begin{definition}
+    \(f\) diferenciável em \(a\) se \(f'(a)\) existe    
+\end{definition}
+
+\begin{theorem}
+    \begin{equation}
+        \text{f diferenciável} \implies \text{f continua}
+    \end{equation}
+    
+    Não vale a volta.
+\end{theorem}
+
+\begin{theorem}
+    \begin{equation}
+        \text{f descontinua em a} \implies \text{f não-diferenciável em a}  
+    \end{equation}
+    
+    Não vale a volta.
+\end{theorem}
+
+\section{reta rangente}
+
+A reta \(r\) tangente a um ponto \((a, f(a))\)
+é da por
+
+\begin{equation}
+y = f'(a)(x - a) + f(a)    
+\end{equation}
+
+
+\section{Regras de derivação}
+
+\textbf{multiplicação por escalar}
+
+\begin{flalign}
+    \frac{d}{dx} \left( cf(x) \right) = c \frac{d}{dx} f(x)    &&
+\end{flalign}
+\\
+\textbf{Soma}
+\\
+\begin{flalign}
+    \frac{d}{dx} (f + g)(x) =
+    \frac{d}{dx} f(x) + \frac{d}{dx} g(x) &&
+\end{flalign}
+\\
+\textbf{Multiplicação}
+\\
+\begin{flalign}
+    \frac{d}{dx} (fg)(x) = f'(x)g(x) + f(x)g'(x) &&
+\end{flalign}
+\\
+\textbf{Divisão}
+\\
+\begin{flalign}
+    \frac{d}{dx} \left( \frac{f}{g} \right) (x)
+    = \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2} &&
+\end{flalign}
+\\
+\textbf{Composta}
+\\
+\begin{flalign}
+    \frac{d}{dx} (f \circ g)(x) = (f' \circ g)(x) g'(x) &&
+\end{flalign}
+\\
+\textbf{Inversa}
+\\
+\begin{flalign}
+    \frac{d}{dx} f^{-1}(y) = \frac{1}{(f' \circ f^{-1})(y)} &&
+\end{flalign}
+
+\section{Tabela de derivadas}
+
+\subsection{Derivadas simples}
+
+\begin{flalign}
+    \frac{d}{dx} c = 0 &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} x = 1 &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} x^{n} = nx^{n-1} &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} \frac{1}{x^n} =
+    \frac{d}{dx} (x^{-c}) = -\frac{c}{x^{c+1}} &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} \sqrt{x} = x^{\frac{1}{2}} = -\frac{1}{2} x^{-\frac{1}{2}} = -\frac{1}{2\sqrt{x}} &&
+\end{flalign}
+\begin{flalign}
+    &\frac{d}{dx} e^x = e^x &&
+\end{flalign}
+\begin{flalign}
+    &\frac{d}{dx} e^{cx} = ce^{cx} &&
+\end{flalign}
+\begin{flalign}
+    &\frac{d}{dx} \log_a x = \frac{1}{ln(a)}. \frac{1}{x} &&
+\end{flalign}
+\begin{flalign}
+    &\frac{d}{dx} \ln{x} = \frac{1}{x} &&
+\end{flalign}
+\begin{flalign}
+    &\frac{d}{dx} a^x = a^x ln(a) &&
+\end{flalign}
+
+\subsection{Derivadas de trigonométricas}
+
+\textbf{Macete}
+
+se tem Derivada \(cos\) aparece sinal de \(-\) e derivadas do sen \(não\) tem sinal adicional.
+
+e segue essa sequencia
+
+\begin{equation}
+      sen(x) \stackrel{D}{\longrightarrow} 
+      cos(x) \stackrel{D}{\longrightarrow} 
+    - sen(x) \stackrel{D}{\longrightarrow} 
+    - cos(x) \stackrel{D}{\longrightarrow}
+      sen(x) \stackrel{D}{\to} ...
+\end{equation}
+
+\begin{flalign}
+    \frac{d}{dx} sen(x) = cos(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} cos(x) = -sen(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} -sen(x) = -cos(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} -cos(x) = sen(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} tan(x) = sec^2(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} sec(x) = tan(x)sec(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} cotan(x) = -cossec^2(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} cosec(x) = -cotan(x)cosec(x) &&
+\end{flalign}
+
+
+
+
+\subsection{Derivadas de trigonométricas inversas}
+
+Passo a passo geral, onde \(trig\) é uma função trigonométrica qualquer e \(arctrig\) é sua inversa
+\begin{enumerate}
+    \item estabeleça o domínio de \(trig\)
+    \item note que \(y = trig(x) \iff arctrig(y) = x\)
+    \item Diferencie implicitamente
+    \item isole o \(y'\) como usualmente se faz e terá a derivada da inversa trigonométrica
+\end{enumerate}
+
+\begin{flalign}
+    \frac{d}{dx} arcsen(x) = \frac{1}{\sqrt{1 - x^2}} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} arccos(x) = - \frac{1}{\sqrt{1 - x^2}} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} arctan(x) = \frac{1}{1 + x^2} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} arccotan(x) = - \frac{1}{1 + x^2} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} arcsec(x) = \frac{1}{x \sqrt{x^2 - 1}} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} arccosec(x) = - \frac{1}{x \sqrt{x^2 - 1}} &&
+\end{flalign}
+
+\subsection{Derivadas de potencias}
+
+\begin{flalign}
+    \frac{d}{dx} x^x = x^x(ln(x) + 1),\quad para\; x>0 &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} g(x)^a = a.g(x)^{a-1}.g'(x) &&
+\end{flalign}
+
+\begin{flalign} 
+    \frac{d}{dx} a^{g(x)} = ln(a).a^{g(x)}.g'(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} f(x)^{g(x)} = \frac{d}{dx}  \, e^{g(x).ln(f(x))} &&
+\end{flalign}
+
+\begin{flalign}
+     = f(x)^{g(x)} . g'(x) . ln (f(x)) + f(x)^{g(x) - 1}.g(x).f'(x) &&
+\end{flalign}
+
+
+
+\chapter{Trigonométricas hiperbólicas}
+\section{Trigonométricas hiperbólicas}
+
+\begin{flalign}
+     senh(x) = \frac{e^x - e^{-x}}{2} &&
+\end{flalign}
+
+\begin{flalign}
+     cosh(x) = \frac{e^x + e^{-x}}{2} &&
+\end{flalign}
+As demais funções trigonométricas são definidas como usualmente se faz, mas com \(senh\) e \(cosh\) no lugar de \(sen\) e \(cos\)
+
+\section{Identidades trigonométricas hiperbólicas}
+
+\begin{flalign}
+    senh(x) = -senh(x), \quad \text{(senh é impar)} &&
+\end{flalign}
+\begin{flalign}
+    cosh(-x) = cosh(x), \quad \text{(cosh é par)} &&
+\end{flalign}
+\begin{flalign}
+    cosh^2(x) -senh^2(x) = 1 &&
+\end{flalign}
+\begin{flalign}
+    1 - tanh^2(x) = sech^2(x) &&
+\end{flalign}
+\begin{flalign}
+    senh(a + b) = senh(a)cosh(b) + cosh(a)senh(b) &&
+\end{flalign}
+\begin{flalign}
+    cosh(a + b) = cosh(a)cosh(b) + senh(a)senh(b) &&
+\end{flalign}
+
+\section{Derivadas de trigonométricas hiperbólicas}
+
+\begin{flalign}
+    \frac{d}{dx} senh(x) = cosh(x) &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} cosh(x) = senh(x) &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} tanh(x) = sech^2(x) &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} sech(x) = - tangh(x) sech^2(x) &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} cotangh(x) = - cossech^2(x) &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} cossech(x) = - cotanh(x) cossec(x) &&
+\end{flalign}
+
+\section{Derivadas de inversa trigonométricas hiperbólicas}
+
+\begin{flalign}
+    \frac{d}{dx} arcsenh(x) = \frac{1}{\sqrt{1 + x^2}} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} arccosh(x) = \frac{1}{\sqrt{-1 + x^2}} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} arccosh(x) = \frac{1}{\sqrt{-1 + x^2}} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} arctanh(x) = \frac{1}{1 - x^2} &&
+\end{flalign}
+
+
+\chapter{Teoremas sobre funções}
+
+\section{Teorema do Valor intermediário}
+
+Seja \(f\) uma função contínua no intervalo \(I = [a,b]\), \(N \in I\) um numero qualuer e \(f(a) \neq f(b)\).
+Então existe \(c \in I\) tal que f(c) = N
+    
+\section{Teorema do anulamento (Teorema de Bolzano)}
+
+Seja \(f\) uma função contínua no intervalo \(I = [a,b]\) e \(a \leq 0 \leq b\).
+Então existe \(c \in I\) tal que f(c) = 0
+
+\section{Teorema do valor Extremo (Teorema de \textit{Weistrass})}
+
+\begin{theorem}
+    Seja f continua em um intervalo fechado \([a,b]\).
+    Então existe um \(M\) máximo e \(m\) mínimo contido em \([a,b]\)
+\end{theorem}
+
+\section{Teorema de Fermat}
+
+\begin{theorem}
+    Se f tiver um máximo ou mínimo local em \(c\), então \(c\) é um ponto crítico.
+\end{theorem}
+
+\section{Teorema de Rolle}
+
+\begin{theorem}
+    Seja \(f\) uma função tal que:
+    \begin{enumerate}
+        \item \(f\) contínua em \([a,b]\)
+        \item \(f\) diferenciável em \((a,b)\)
+        \item \(f(a)\) = \(f(b)\)
+    \end{enumerate}
+    Então
+    \begin{equation}
+        \exists c \in (a,b);\quad f'(c) = 0
+    \end{equation}
+    O que se traduz como: ``se os extremos são iguais então a derivada se anula em algum lugar''
+\end{theorem}
+
+\section{Teorema do Valor Médio}
+\begin{theorem}
+    seja \(f\) uma função. Se:
+    \begin{enumerate}
+        \item f contínua no intervalo \( [a,b] \)
+        \item f diferenciável no intervalo \( (a,b) \)
+    \end{enumerate}
+    Então:
+    
+    \begin{equation}
+        \exists c \in (a,b);\quad f'(c) = \frac{f(a) - f(b)}{a - b}
+    \end{equation}    
+\end{theorem}
+
+\chapter{Aproximações}
+
+\section{Aproximação linear}
+
+Aproximamos uma função por sua reta tangente em algum ponto \(x\) por
+\begin{equation}
+    f(x) \approx L(x) = f'(a).(x-a) + f(a), \quad \text{para x próximos de a}    
+\end{equation}
+\begin{definition}
+    E definimos \(L(x)\) como \textbf{linearização de \(f\) em \(a\)}
+\end{definition}
+
+\section{Diferenciais}
+
+\begin{equation}
+    \Delta y = f(x + \Delta x) - f(x)
+\end{equation}
+
+\begin{definition}[Diferencial dx]
+    \begin{equation}
+        dx = \Delta x
+    \end{equation}
+    
+\end{definition}
+
+\begin{definition}[Diferencial dy]
+    \begin{equation}
+        dy = L(x + \Delta x) - L(x)
+    \end{equation}
+    
+\end{definition}
+
+\begin{equation}
+    \Delta y = f(x + \Delta x) - f(x) \approx L(x + \Delta x) - L(x)
+\end{equation}
+
+\begin{definition}[Erro relativo]
+    O erro relativo \(E\) da aproximação é dado por
+    \begin{equation}
+        E = \frac{\Delta y}{y}    
+    \end{equation}
+\end{definition}
+
+\section{Polinômio de Taylor}
+O polinômio de taylor \(T\) de ordem \(K\) de uma função \(f\) no ponto \(a\) é dada por:
+\begin{equation}
+    T_K(f(a)) = \sum_{n=0}^{K} \frac{f^{(n)}(a)}{n!}(x - a)
+\end{equation}
+Onde \(f^{(n)}\) é a \textit{n-ésima} derivada de \(f\). Temos:
+\begin{equation}
+    T_K(f(a)) = \frac{f^{(0)}(a)}{0!}(x - a) +
+           \frac{f^{(1)}(a)}{1!}(x - a) + ... +
+           \frac{f^{(K)}(a)}{K!}(x - a)
+\end{equation}
+Para o valor especifico de \(N= \infty\) e \(f\) infinitamente diferenciável:
+\begin{equation}
+    T(f(a)) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x - a)
+\end{equation}
+\begin{equation}
+    T(f(a)) = \frac{f^{(0)}(a)}{0!}(x - a) +
+           \frac{f^{(1)}(a)}{1!}(x - a) +
+           \frac{f^{(2)}(a)}{2!}(x - a) + ...
+\end{equation}
+
+\chapter{Como conseguir informações sobre funções}
+
+\section{Máximo e Mínimo}
+
+\begin{definition}[ponto e valor de máximo absoluto]
+    Seja \(c \in Df\). Dizemos que \(c\) é (\textit{ponto de}) máximo absoluto ou (\textit{ponto de}) máximo global se:
+    
+    \begin{equation}
+        f(c) \geq f(x), \forall x \in Df
+    \end{equation}
+    e denominamos o número \(M = f(c)\) como o \textbf{valor} de máximo absoluto.
+\end{definition}
+
+\begin{definition}[ponto e valor de mínimo absoluto]
+    A definição é análoga para mínimo absoluto e valor de mínimo absoluto
+\end{definition}
+
+\begin{definition}[ponto e valor de máximo local]
+    Seja \(I \subset Df\) um intervalo aberto. Dizemos que \(c\) é (\textit{ponto de}) máximo local ou (\textit{ponto de}) máximo relativo se:
+    
+    \begin{equation}
+        f(c) \geq f(x), \forall x \in I
+    \end{equation}
+    e denominamos o número \(M = f(c)\) como o \textbf{valor} de máximo local.
+\end{definition}
+
+\begin{definition}[ponto e valor de mínimo local]
+    A definição é análoga para mínimo local e valor local
+\end{definition}
+
+\section{Ponto crítico}
+
+\begin{definition}
+    se \(f'(c) = 0\) ou \(f'(c)\) não existe então \(c\) é um ponto crítico.
+\end{definition}
+
+\section{Crescente e Decrescente}
+
+\begin{theorem}
+    Suponha \(f\) é diferenciável num intervalo aberto \(I\). Vale que:
+    \begin{enumerate}
+        \item Se \(f'(x) > 0, \forall x  \in I\) então f é crescente em I
+        \item Se \(f'(x) < 0, \forall x  \in I\) então f é decrescente em I
+        \item \(f'(x) = 0, \forall x  \in I\) então f é constante em I
+    \end{enumerate}
+\end{theorem}
+
+\section{Assintotas}
+
+\subsection{Horizontal}
+
+\begin{definition}
+    \begin{equation}
+        \lim_{x \to \pm \infty} f(x) = L \implies \text{a reta} y = L \text{ é assintota horizontal de \(f\)}
+    \end{equation}
+\end{definition}
+
+\subsection{Vertical}
+
+\begin{definition}
+    \begin{equation}
+        \lim_{x \to a^{\pm}} f(x) = \pm \infty \implies \text{a reta} x = a \text{ é assintota vertical de \(f\)}
+    \end{equation}
+\end{definition}
+Podemos achar as assintotas verticais da seguinte maneira
+\begin{method}
+    Seja \(P\) o conjunto dos pontos onde dado um numero qualquer \( a \in P\), temos que:
+    \begin{enumerate}
+        \item \(a \notin Df\) ou
+        \item \(f\) descontinua em \(a\)
+    \end{enumerate}
+    Testando os limites laterais em cada um dos \( a \in P\) nos da todas as assintotas verticais.
+\end{method}
+
+\subsection{Oblíqua}
+
+\begin{definition}
+    \begin{equation}
+        \lim_{x \to \pm \infty} [f(x) - (mx + b)] = 0, m \neq 0 \implies 
+    \end{equation}
+    \centering
+    a reta \( y = mx + b\) é assintota oblíqua
+\end{definition}
+Para encontrar assintota obliqua:
+\begin{method}
+    Se existir \(m\) e \(b\) tal que:
+    \begin{enumerate}
+        \item 
+            \begin{equation}
+                \lim_{x \to \pm \infty}  \frac{f(x)}{x} = m
+            \end{equation}
+        \item
+            \begin{equation}
+                \lim_{x \to \pm \infty}  f(x) - mx = b
+            \end{equation}
+    \end{enumerate}
+    Então
+    \(y = mx + b\) é uma assintota obliqua
+\end{method}
+
+\section{Encontrar máx. ou mín.}
+
+\subsection{intervalo fechado pra valores absoluto}
+
+\begin{method}
+    Seja \(f\) uma função contínua em um intervalo \([a,b]\).
+    Podemos encontrar o máximo e mínimo absoluto da seguinte forma
+    
+    \begin{enumerate}
+        \item encontre os valores de \(f\) nos pontos criticos em \((a,b)\)
+        \item encontre os valores de \(f(a)\) e \(f(b)\) (extremos do intervalo)
+        \item O menor valor dos números é o valor absoluto e o menor valor é o mínimo absoluto
+        
+    \end{enumerate}    
+\end{method}
+
+
+
+\subsection{Teste da primeira derivada}
+\begin{method}
+    Seja \(f\) uma função continua e \(c\) um ponto critico. Temos que:
+    \begin{enumerate}
+        \item se o sinal de \(f'\) mudar de positivo pra negativo em \(c\) \(\implies\) \(c\) é ponto de máximo local
+        \item se o sinal de \(f'\) mudar de negativo pra positivo em \(c\) \(\implies\) \(c\) é ponto de máximo local
+        \item se o sinal de \(f'\) não mudar, então \(c\) não é ponto de máximo nem de mínimo
+    \end{enumerate}    
+\end{method}
+
+
+
+\subsection{Teste da segunda derivada}
+
+\begin{method}
+    Suponha \(f'(c) = 0\), ou seja, as raizes de \(f'(x)\) , e que \(f''(c)\) existe. Então temo que:
+    
+    \begin{enumerate}
+        \item se \(f''(c) > 0 \implies\) f(c) é um valor de mínimo local
+        \item se \(f''(c) < 0 \implies\) f(c) é um valor de máximo local
+    \end{enumerate}    
+\end{method}
+O teste falha quando:
+\begin{enumerate}
+    \item \(\nexists f'(c)\)
+    \item \(f''(c) = 0\)
+    \item \(\nexists f''(c)\)
+\end{enumerate}
+
+\section{Concavidade}
+
+\subsection{Teste de concavidade}
+
+\begin{enumerate}
+    \item \(f''(x) > 0,\, \forall x \in I \implies f\) em \(I\) é côncavo para cima
+    \item \(f''(x) < 0,\, \forall x \in I \implies f\) em \(I\) é côncavo para baixo
+\end{enumerate}
+
+\begin{remark}
+    Note que:\\
+    \(f''(x) = 0,\, \forall x \in I \\
+    \implies f'(x) = c \\
+    \implies f(x) = cx + d \\ 
+    \implies f\) é reta afim e não tem concavidade
+\end{remark}
+
+\subsection{Ponto de inflexão}
+
+\begin{definition}
+    Um ponto \(P\) onde a curva \(y = f(x)\) é chamado de \textit{Ponto de Inflexão} se:
+    \begin{enumerate}
+        \item se \(f\) for contínua em \(P\)
+        \item e a curva mudar de concavidade em \(P\)
+    \end{enumerate}
+\end{definition}
+
+
+\section{Construção do gráfico}
+
+
+\begin{method}
+    O algoritmo para construção do gráfico:
+    \begin{enumerate}
+        \item Determine o Domínio \(Df\) de \(f\)
+        \item Determine onde existe intersecção com os eixos, os pontos:
+            \begin{enumerate}
+                \item onde \(f(x) = 0\)
+                \item e o ponto \(f(0)\)
+            \end{enumerate}
+        \item Se existe Simetria.  Se ela é
+            \begin{enumerate}
+                \item Par: \(f(-x) = f(x), \forall x \in Df \implies\) gráfico simétrico em relação ao eixo \(y\)
+                \item Impar: \(f(-x) = -f(x), \forall x \in Df \implies\) gráfico simétrico em relação a reta \(y = -x\)
+                \item Periódico: \(f(x + p) = f(x), \forall x \in Df \implies\) o gráfico se repete em cada intervalo e comprimento \(p\) 
+            \end{enumerate}
+        \item Determinar as assintotas
+            \begin{enumerate}
+                \item Horizontais
+                \item verticais
+                \item Oblíquas
+            \end{enumerate}
+            \begin{remark}
+                se existe assintota horizontal \(\implies\) não existe assintota obliquá
+            \end{remark}
+        \item Intervalos crescentes e decrescentes
+        \item Pontos e valores de máximo e mínimo
+        \item Concavidade e pontos de inflexão
+        \item Esboçe a curva:
+            \begin{enumerate}
+                \item Marque as assintotas
+                \item Marque todos os pontos que achou
+                \item Marque os intervalos de concavidade e crescimento/decrescimento
+                \item Desenha a curva atendendo aos que esta marcado
+            \end{enumerate}
+            
+    \end{enumerate}
+    
+    
+\end{method}
+
+\chapter{Somatórios}
+
+\section{formulas}
+
+\begin{flalign}
+    \sum_{i =1}^{n} c = c + c + c + ... + c  = nc &&
+\end{flalign}
+
+\begin{flalign}
+    \sum_{i =1}^{n} i = 1 + 2 + 3 + ... + n  = \frac{n(n-1)}{2} &&
+\end{flalign}
+
+\begin{flalign}
+    \sum_{i =1}^{n} i^2 = 1^2 + 2^2 + 3^2 + ... + n^2  = \frac{n(n+1)(2n-1)}{6} &&
+\end{flalign}
+
+\begin{flalign}
+    \sum_{i =1}^{n} i^3 = 1^3 + 2^3 + 3^3 + ... + n^3  = \left[
+        \frac{n(n-1)}{2}
+    \right]^2 &&
+\end{flalign}
+
+\begin{flalign}
+    \sum_{i =1}^{n} ai \pm bi = \sum_{i =1}^{n} ai \pm \sum_{i =1}^{n} bi &&
+\end{flalign}
+
+\begin{flalign}
+    e^x = \sum_{i = 0}^{\infty} \frac{x^n}{n!} = \frac{x^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots &&
+\end{flalign}
+
+\chapter{Integrais Indefinidas}
+
+\section{Propriedades}
+
+\subsection{Igualdades}
+
+\begin{flalign}
+    \int c f(x) dx = c\int f(x) dx &&
+\end{flalign}
+
+\begin{flalign}
+    \int [g(x) \pm f(x)] dx = \int g(x) dx \pm \int f(x) dx  &&
+\end{flalign}
+
+
+\section{Tabela de integrais}
+
+\subsection{Integrais simples}
+
+\begin{flalign}
+    \int k\; dx = kx + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int x^n\; dx = \frac{x^{n +1 }}{n+1} + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int \frac{1}{x}\; dx = ln(|x|) + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int a^x\; dx = \frac{a^x}{ln(a)} + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int e^x\; dx = e^x + d &&
+\end{flalign}
+
+\subsection{Integrais trigonométricas}
+
+\begin{flalign}
+    \int sen(x)\; dx = - cos(x) + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int cos(x)\; dx = sen(x) + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int sec^2(x)\; dx = tan(x) + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int sec(x)tan(x)\; dx = sec(x) + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int cossec^2(x)\; dx = -cotan(x) + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int \frac{1}{1 + x^2}\;dx = artctan(x) + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int \frac{1}{\sqrt{1 - x^2}}\; dx = arcsen(x) + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int cossec(x)cotan(x)\; dx = -cossec(x) + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int \frac{1}{x^2 + a^2} = \frac{1}{a} arctan \left( \frac{x}{a} \right) + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int tan(x)\; dx = ln(\,|sec(x)|\,) + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int sec(x)\; dx = ln(\,|sec(x)|\,) + tan(x) + d &&
+\end{flalign}
+
+
+
+\subsection{Integrais de trigonométricas hiperbólicas}
+
+\begin{flalign}
+    \int senh(x)\; dx = cosh(x) + d &&
+\end{flalign}
+
+\begin{flalign}
+    \int cosh(x)\; dx = senh(x) + d &&
+\end{flalign}
+
+
+\chapter{Integrais definidas}
+
+\section{Teorema fundamental do Calculo}
+
+\subsection{Teorema I}
+
+\begin{theorem}
+    Seja \(f\) contínua em \([a,b]\) e diferenciável em \((a,b)\). então a função \(g\)definida por
+    
+    \begin{equation}
+        g(x) = \int_{a}^{x} f(t) dt ,\quad a \leq x \leq b
+    \end{equation}
+    Então
+    \begin{equation}
+        g'(x) = f(x)
+    \end{equation}    
+\end{theorem}
+
+
+
+\subsection{Teorema II}
+\begin{theorem}
+    \begin{equation}
+        \int_{a}^{b} f(x) dx = F(a) - F(b),\quad F'(x) = f(x)
+    \end{equation}
+\end{theorem}
+
+
+\section{Propriedades}
+
+\subsection{Igualdades}
+
+Assuma \( a > b\). Temos:
+
+\begin{flalign}
+    \int_b^a f(x)\; dx = - \int_a^b f(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \int_a^a f(x)\; dx = 0 &&
+\end{flalign}
+
+\begin{flalign}
+    \int_b^a c\; dx = c(b - a) &&
+\end{flalign}
+
+\begin{flalign}
+    \int_b^a [f(x) \pm g(x) ] dx = 
+    \int_b^a f(x)\; dx \pm 
+    \int_b^a g(x)\; dx  &&
+\end{flalign}
+
+\begin{flalign}
+    \int_b^a c.f(x) dx = c\int_b^a f(x)\; dx &&
+\end{flalign}
+
+\begin{flalign}
+    \int_a^c f(x)\; dx + \int_c^b f(x)\; dx = \int_a^b f(x)\;dx &&
+\end{flalign}
+
+\subsection{Desigualdades}
+
+\begin{flalign}
+    \text{Se \(f(x) > 0 \) para \( a \leq x \leq b \implies\)} &&
+\end{flalign}
+\begin{equation}
+    \int_a^b f(x)\; dx > 0
+\end{equation}
+
+\begin{flalign}
+    \text{Se \(f(x) > g(x) \) para \( a \leq x \leq b \implies\)} &&
+\end{flalign}
+\begin{equation}
+    \int_a^b f(x)\; dx > \int_a^b g(x)\; dx 
+\end{equation}
+
+\begin{flalign}
+    \text{Se \( m \leq f(x) \leq M \) para \( a \leq x \leq b \implies\)} &&
+\end{flalign}
+\begin{equation}
+    m(b - a ) \leq \int_a^b f(x)\; dx \leq M(b - a)
+\end{equation}
+    
+
+\chapter{Integrais Impróprias}
+
+\section{Integrais impróprias no infinito}
+
+\subsection{\([a,\infty)\)}
+
+Integrais da forma
+
+\begin{equation}
+    \int_{a}^{\infty} f(t) \; dt
+\end{equation}
+definimos como
+\begin{equation}
+    \int_{a}^{\infty} f(t) \; dt = \lim_{x \to \infty} \int_{a}^{x} f(t) \; dt = L
+\end{equation}
+
+\subsection{\((-\infty, b]\)}
+Integrais da forma
+
+\begin{equation}
+    \int_{-\infty}^{b} f(t) \; dt
+\end{equation}
+definimos como
+\begin{equation}
+    \int_{-\infty}^{b} f(t) \; dt = \lim_{x \to -\infty} \int_{x}^{b} f(t) \; dt = L
+\end{equation}
+
+\subsection{\((-\infty, \infty)\)}
+Integrais da forma
+
+\begin{equation}
+    \int_{-\infty}^{\infty} f(t) \; dt
+\end{equation}
+definimos como
+\begin{equation}
+    \int_{-\infty}^{\infty} f(t) \; dt = 
+        \lim_{x \to -\infty} \int_{x}^{b} f(t) \; dt +  
+        \lim_{x \to \infty} \int_{b}^{x} f(t) \; dt = L
+\end{equation}
+
+\subsection{Convergentes e divergentes}
+
+se o limite \(L\) existe nas integrais definidas, a integral é dita \textbf{Convergente}. Senão, a integral é dita \textbf{Divergente}.
+
+
+\section{Propriedades de convergências e divergências}
+
+\begin{enumerate}
+    \item \( \int_{a}^{b} f(x)\) convergente \(> \int_{a}^{b} g(x) \implies \int_{a}^{b} g(x)\) convergente
+    \item \(\int_{a}^{b} f(x)\) divergente \(< \int_{a}^{b} g(x) \implies \int_{a}^{b} g(x)\) divergente
+\end{enumerate}
+
+\section{Integrais com descontinuidade}
+
+Se \(f\) integrável em \((a, b]\), definimos a integral como:
+\begin{equation}
+    \int_{a}^{b} f(x)dx = \lim_{\epsilon \to a^{+} } \int_{\epsilon}^{b} f(x)dx
+\end{equation}
+Se \(f\) integrável em \([a,b)\), definimos a integral como:
+\begin{equation}
+    \int_{a}^{b} f(x)dx = \lim_{\epsilon \to b^{-} } \int_{b}^{\epsilon} f(x)dx
+\end{equation}
+E se \(f\) integrável em \([a, b]\) com exceção de \(c \in [a,b]\) tal que \(a < c < b\) Podemos definir a integral da seguinte maneira:
+\begin{equation}
+    \int_{a}^{b} f(x)dx = 
+        \lim_{\epsilon \to c^{-} } \int_{a}^{\epsilon} f(x)dx +
+        \lim_{\epsilon \to c^{+} } \int_{\epsilon}^{b} f(x)dx 
+\end{equation}
+
+
+\chapter{Técnicas de integração}
+
+\section{Integrais trigonométricas}
+
+\subsection{\(sen^n(x).cos^m(x)\)}
+
+\subsubsection{\(m\) é impar}
+
+\begin{flalign}
+    \int sen(x)^n.cos^m(x)\; dx &&
+\end{flalign}
+se \(m\) é impar \(\implies\) \(m = 2k + 1\)
+\begin{flalign}
+    \int sen(x)^n.cos^{2k + 1}(x)\; dx = &&
+\end{flalign}
+\begin{flalign}
+    \int sen(x)^n.(cos^{2}(x))^kcos^{1}(x)\; dx = &&
+\end{flalign}
+Utilizando a identidade \( cos^2(x) = 1 - sen^2(x)\),
+\begin{flalign}
+    \int sen(x)^n.(1 - sen^2(x))^k cos^{1}(x)\; dx &&
+\end{flalign}
+Daí, tomando \( u = sen(x)\), temos \( du = cos(x)dx\) e segue que:
+\begin{flalign}
+    \int u^n.(1 - u^ 2)^k u\; du &&
+\end{flalign}
+
+\subsubsection{\(n\) é impar}
+
+O processo é análogo, 
+
+\begin{enumerate}
+    \item Guarde um fator seno
+    \item Use a identidade \( sen^2(x) = 1 - cos^2(x) \)
+    \item Substitua \( u = cos(x) \)
+    \item Resolva a integral
+\end{enumerate}
+
+\subsubsection{\(n\) e \(m\) são pares}
+
+Utilizamos as identidades:
+\begin{gather}
+    sen^2(x) = \frac{1}{2} ( 1 - cos(2x)) \\
+    cos^2(x) = \frac{1}{2} ( 1 - sen(2x)) \\
+    cos(x)sen(x) = \frac{1}{2} sen(2x)
+\end{gather}
+
+\subsection{\(sen(mx).cos(nx)\)}
+
+\begin{flalign}
+    \int sen(mx).cos(nx)\; dx &&
+\end{flalign}
+Utilizamos a seguinte Identidade:
+
+\begin{equation}
+    sen(a)cos(b) = 
+    \frac{1}{2} 
+    [
+    sen(a - b)
+    +
+    sen(a + b
+    ]
+\end{equation}
+
+\begin{flalign}
+    \int sen(mx).sen(nx)\; dx &&
+\end{flalign}
+Utilizamos a seguinte Identidade:
+
+\begin{equation}
+    sen(a)sen(b) = 
+    \frac{1}{2} 
+    [
+    cos(a - b)
+    -
+    cos(a + b
+    ]
+\end{equation}
+
+\begin{flalign}
+    \int cos(mx).cos(nx)\; dx &&
+\end{flalign}
+Utilizamos a seguinte Identidade:
+
+\begin{equation}
+    sen(a)sen(b) = 
+    \frac{1}{2} 
+    [
+    cos(a - b)
+    +
+    cos(a + b
+    ]
+\end{equation}
+
+\subsection{\(tan^n(x).sec^m(x)\)}
+
+\subsubsection{\(n\) é par}
+\begin{enumerate}
+    \item Guarde um fator \(sec^2(x)\)
+    \item use que \(sec^2(x) = 1 + tan^2(x)\)
+    \item substitua u = tan(x)
+\end{enumerate}
+
+\subsubsection{\(n\) é impar}
+
+\begin{enumerate}
+    \item Guarde um fator \(sec(x)tan(x)\)
+    \item use que \(tan^2(x) = sec^2(x) - 1\)
+    \item substitua u = sec(x)
+\end{enumerate}
+
+\subsubsection{\(n\) par e \(m\) ímpar}
+
+\begin{enumerate}
+    \item Expresse tudo em termos da secante
+    \item Resolva as potencias da secante integrando por partes
+\end{enumerate}
+
+utilizando as integrais primitivas:
+\begin{flalign}
+    \int tan(x)\; dx = ln(|sec(x)|) + c
+\end{flalign}
+\begin{flalign}
+    \int sec(x)\; dx = ln(|sec(x)|) + tan(x) + c
+\end{flalign}
+
+\section{Substituição trigonométrica}
+
+\subsection{\(\sqrt{a^2 - x^2}\)}
+Substitua:
+
+\begin{equation}
+    x = a.sen(\theta)
+\end{equation}
+com o triangulo representado por:
+\begin{equation}
+    a^2 = (\sqrt{a^2 - x^2})^2 + x^2
+\end{equation}
+
+\subsection{\(\sqrt{a^2 - x^2}\)}
+Substitua:
+
+\begin{equation}
+    x = a.tan(\theta)
+\end{equation}
+com o triangulo representado por:
+\begin{equation}
+    (\sqrt{a^2 + x^2})^2 = a^2 + x^2
+\end{equation}
+
+\subsection{\(\sqrt{x^2 - a^2}\)}
+Substituía:
+
+\begin{equation}
+    x = a.sec(\theta)
+\end{equation}
+com o triangulo representado por:
+\begin{equation}
+    x^2 = (\sqrt{x^2 - a^2})^2 + a^2 
+\end{equation}
+
+
+\section{Funções racionais}
+
+Temos a integral 
+
+\begin{equation}
+    \int \frac{p(x)}{q(x)}\; dx
+\end{equation}
+
+Se \(grau(p) > grau(q)\) então efetuamos a divisão o que nos da temos:
+
+\begin{equation}
+    f(x) = \frac{p(x)}{q(x)} = \frac{r(x)}{q(x)} + s(x) 
+\end{equation}
+Onde \(grau(r) > grau(q)\). E nossa integral se transforma em:
+\begin{equation}
+    \int f(x) = \int \left( \frac{r(x)}{q(x)} + s(x)\; \right) dx
+\end{equation}
+E daí temos que:
+\begin{equation}
+    \int f(x) = \int \frac{r(x)}{q(x)}\; dx + \int s(x)\; dx 
+\end{equation}
+fatorando ambos os polinômios de \(q(x)\) temos que:
+
+\begin{equation}
+    \textstyle
+    f(x) = \frac{
+        r(x)
+    }{
+        (a_1x + b_1)^{n_1}
+        \cdot ... \cdot 
+        (a_kx + b_k)^{n_k}
+        \cdot
+        (d_1x^2 + e_1x + f_1)^{m_1}
+        \cdot ... \cdot 
+        (d_lx^2 + e_lx + f_l)^{m_l}
+    }
+\end{equation}
+Onde cada \(a_ix + b_i, i = 1...k\), são equações lineares, e as equações \(d_jx^2 + e_jx + f_j, j = 1...l\), são equações de segundo grau irredutíveis \(( \Delta < 0 )\).
+Queremos cada componente da fatoração como:
+\\
+\\
+se a \(c_n(x)\) é a \textit{n-ésima} componente da fatoração de \(q(x)\) e tivermos \(c_n(x) = (a_ix + b_i)^k\) fatoramos como:
+\begin{equation*}
+    c_n(x) = 
+        \frac{A_1}{(a_1x + b_1)^1} +
+        \frac{A_2}{(a_2x + b_2)^2} + ... + 
+        \frac{A_n}{(a_nx + b_n)^n}
+\end{equation*}
+que denotamos como:
+\begin{equation}
+    c_n(x) = \sum_{ i = 1}^{n} \frac{A_i}{(a_1x + b_1)^i}
+\end{equation}
+se a \(d_n(x)\) é a \textit{n-ésima} componente da fatoração de \(q(x)\) e tivermos \(d_n(x) = (a_jx^2 + b_jx + c_j)^l\) fatoramos como:
+\begin{equation}
+    d_n(x) = 
+        \frac{B_1x + C_1}{(c_1x^2 + d_1x + e_1)^1} +
+        \frac{B_2x + C_2}{(c_2x^2 + d_2x + e_2)^2} + ... + 
+        \frac{B_nx + C_m}{(c_mx^2 + d_mx + e_m)^m}
+\end{equation}
+que denotamos como:
+\begin{equation}
+    d_n(x) = \sum_{j = 1}^{m} \frac{B_jx + C_j}{(c_jx^2 + d_jx + e_j)^j}
+\end{equation}
+Temos uma fatoração de \(f(x)\) de tal forma:
+\begin{equation}
+    \frac{p(x)}{q(x)} =
+    \sum_{u = 1}^{v} 
+        c_u(x) + 
+    \sum_{w = 1}^{z} 
+        d_w(x)
+\end{equation}
+teremos os coeficientes \(A_p, B_q, C_r\) resolvendo o sistema linear que decorre de:
+\begin{equation}
+    q(x) = 
+        p(x)
+            \left(
+                \sum_{u = 1}^{v} 
+            c_u(x) + 
+                \sum_{w = 1}^{z} 
+            d_w(x)
+            \right)
+\end{equation}
+Descobertos os coeficientes das equações, teremos que:
+\begin{equation}
+    f(x) = 
+        s(x) + \frac{p(x)}{q(x)}
+\end{equation}
+\begin{equation}
+    f(x) = 
+        s(x) + 
+        \sum_{u = 1}^{v} 
+            c_u(x) + 
+        \sum_{w = 1}^{z} 
+            d_w(x)
+\end{equation}
+o que nos da finalmente que
+\begin{equation}
+    \int f(x) dx = 
+        \int s(x)dx + 
+        \int 
+            \left(
+                \sum_{u = 1}^{v} c_u(x)
+            \right)
+        dx
+        + 
+        \int 
+            \left(
+                \sum_{w = 1}^{z} d_w(x)
+            \right)
+        dx
+\end{equation}
+e como sabemos integral o polinômio \(s(x)\) e cada polinômio \(c_u\) e \(d_w\), temos uma integral simplificada.
+\section{Substituição racionalizante}
+
+Se tivermos:
+\begin{equation}
+    \int \sqrt[\leftroot{-3}\uproot{3}n]{g(x)}\; dx
+\end{equation}
+Substituímos \( u = \sqrt[\leftroot{-3}\uproot{3}n]{g(x)} \)
+\\
+Se tivermos \(f(x)\) um quociente entre 2 polinomios com potencias fracionarias de x, então fazemos a substituição 
+\begin{equation}
+    x = t^k
+\end{equation} 
+Onde \(k\) é denominador comum entre as frações potencia de \(x\)
+
+\end{document}

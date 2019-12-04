@@ -1,0 +1,68 @@
+\chapter{Integrais Impróprias}
+
+\section{Integrais impróprias no infinito}
+
+\subsection{\([a,\infty)\)}
+
+Integrais da forma
+
+\begin{equation}
+    \int_{a}^{\infty} f(t) \; dt
+\end{equation}
+definimos como
+\begin{equation}
+    \int_{a}^{\infty} f(t) \; dt = \lim_{x \to \infty} \int_{a}^{x} f(t) \; dt = L
+\end{equation}
+
+\subsection{\((-\infty, b]\)}
+Integrais da forma
+
+\begin{equation}
+    \int_{-\infty}^{b} f(t) \; dt
+\end{equation}
+definimos como
+\begin{equation}
+    \int_{-\infty}^{b} f(t) \; dt = \lim_{x \to -\infty} \int_{x}^{b} f(t) \; dt = L
+\end{equation}
+
+\subsection{\((-\infty, \infty)\)}
+Integrais da forma
+
+\begin{equation}
+    \int_{-\infty}^{\infty} f(t) \; dt
+\end{equation}
+definimos como
+\begin{equation}
+    \int_{-\infty}^{\infty} f(t) \; dt = 
+        \lim_{x \to -\infty} \int_{x}^{b} f(t) \; dt +  
+        \lim_{x \to \infty} \int_{b}^{x} f(t) \; dt = L
+\end{equation}
+
+\subsection{Convergentes e divergentes}
+
+se o limite \(L\) existe nas integrais definidas, a integral é dita \textbf{Convergente}. Senão, a integral é dita \textbf{Divergente}.
+
+
+\section{Propriedades de convergências e divergências}
+
+\begin{enumerate}
+    \item \( \int_{a}^{b} f(x)\) convergente \(> \int_{a}^{b} g(x) \implies \int_{a}^{b} g(x)\) convergente
+    \item \(\int_{a}^{b} f(x)\) divergente \(< \int_{a}^{b} g(x) \implies \int_{a}^{b} g(x)\) divergente
+\end{enumerate}
+
+\section{Integrais com descontinuidade}
+
+Se \(f\) integrável em \((a, b]\), definimos a integral como:
+\begin{equation}
+    \int_{a}^{b} f(x)dx = \lim_{\epsilon \to a^{+} } \int_{\epsilon}^{b} f(x)dx
+\end{equation}
+Se \(f\) integrável em \([a,b)\), definimos a integral como:
+\begin{equation}
+    \int_{a}^{b} f(x)dx = \lim_{\epsilon \to b^{-} } \int_{b}^{\epsilon} f(x)dx
+\end{equation}
+E se \(f\) integrável em \([a, b]\) com exceção de \(c \in [a,b]\) tal que \(a < c < b\) Podemos definir a integral da seguinte maneira:
+\begin{equation}
+    \int_{a}^{b} f(x)dx = 
+        \lim_{\epsilon \to c^{-} } \int_{a}^{\epsilon} f(x)dx +
+        \lim_{\epsilon \to c^{+} } \int_{\epsilon}^{b} f(x)dx 
+\end{equation}

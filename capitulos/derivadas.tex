@@ -1,0 +1,254 @@
+\chapter{Derivadas}
+
+\begin{equation}
+f'(x) 
+=
+\lim_{x \to 0} \frac{
+    f(x + h) - f(x)
+}{
+    h
+}
+\end{equation}
+Ou
+\begin{equation}
+f'x 
+= 
+\lim_{x \to a} \frac{
+    f(x) - f(a)
+}{
+    x - a
+}    
+\end{equation}
+
+
+\subsection*{Notações}
+
+temos as seguintes notações para a primeira derivada e as derivadas superiores:
+\begin{flalign}
+    f'(x), f''(x), f'''(x), ... &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} f, \frac{d^2}{dx^2} f, \frac{d^3}{dx^3}f , ... &&
+\end{flalign}
+\begin{flalign}
+    D^1 f(x), D^2 f(x), D^3 f(x), ... &&
+\end{flalign}
+\begin{flalign}
+    f^{(1)}, f^{(2)}, f^{(3)}, ... &&
+\end{flalign}
+OBS: Note que a \(n\) derivada \(f^{\textbf{(n)}}(x)\) é diferente da \(n\) composta \(f^{\textbf{n}}(x)\) apesar das notações serem parecidas. 
+
+\section{Diferenciabilidade e continuidade}
+
+\begin{definition}
+    \(f\) diferenciável em \(a\) se \(f'(a)\) existe    
+\end{definition}
+
+\begin{theorem}
+    \begin{equation}
+        \text{f diferenciável} \implies \text{f continua}
+    \end{equation}
+    
+    Não vale a volta.
+\end{theorem}
+
+\begin{theorem}
+    \begin{equation}
+        \text{f descontinua em a} \implies \text{f não-diferenciável em a}  
+    \end{equation}
+    
+    Não vale a volta.
+\end{theorem}
+
+\section{reta rangente}
+
+A reta \(r\) tangente a um ponto \((a, f(a))\)
+é da por
+
+\begin{equation}
+y = f'(a)(x - a) + f(a)    
+\end{equation}
+
+
+\section{Regras de derivação}
+
+\textbf{multiplicação por escalar}
+
+\begin{flalign}
+    \frac{d}{dx} \left( cf(x) \right) = c \frac{d}{dx} f(x)    &&
+\end{flalign}
+\\
+\textbf{Soma}
+\\
+\begin{flalign}
+    \frac{d}{dx} (f + g)(x) =
+    \frac{d}{dx} f(x) + \frac{d}{dx} g(x) &&
+\end{flalign}
+\\
+\textbf{Multiplicação}
+\\
+\begin{flalign}
+    \frac{d}{dx} (fg)(x) = f'(x)g(x) + f(x)g'(x) &&
+\end{flalign}
+\\
+\textbf{Divisão}
+\\
+\begin{flalign}
+    \frac{d}{dx} \left( \frac{f}{g} \right) (x)
+    = \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2} &&
+\end{flalign}
+\\
+\textbf{Composta}
+\\
+\begin{flalign}
+    \frac{d}{dx} (f \circ g)(x) = (f' \circ g)(x) g'(x) &&
+\end{flalign}
+\\
+\textbf{Inversa}
+\\
+\begin{flalign}
+    \frac{d}{dx} f^{-1}(y) = \frac{1}{(f' \circ f^{-1})(y)} &&
+\end{flalign}
+
+\section{Tabela de derivadas}
+
+\subsection{Derivadas simples}
+
+\begin{flalign}
+    \frac{d}{dx} c = 0 &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} x = 1 &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} x^{n} = nx^{n-1} &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} \frac{1}{x^n} =
+    \frac{d}{dx} (x^{-c}) = -\frac{c}{x^{c+1}} &&
+\end{flalign}
+\begin{flalign}
+    \frac{d}{dx} \sqrt{x} = x^{\frac{1}{2}} = -\frac{1}{2} x^{-\frac{1}{2}} = -\frac{1}{2\sqrt{x}} &&
+\end{flalign}
+\begin{flalign}
+    &\frac{d}{dx} e^x = e^x &&
+\end{flalign}
+\begin{flalign}
+    &\frac{d}{dx} e^{cx} = ce^{cx} &&
+\end{flalign}
+\begin{flalign}
+    &\frac{d}{dx} \log_a x = \frac{1}{ln(a)}. \frac{1}{x} &&
+\end{flalign}
+\begin{flalign}
+    &\frac{d}{dx} \ln{x} = \frac{1}{x} &&
+\end{flalign}
+\begin{flalign}
+    &\frac{d}{dx} a^x = a^x ln(a) &&
+\end{flalign}
+
+\subsection{Derivadas de trigonométricas}
+
+\textbf{Macete}
+
+se tem Derivada \(cos\) aparece sinal de \(-\) e derivadas do \(sen\) não tem sinal adicional.
+
+e segue essa sequencia
+
+\begin{equation}
+      sen(x) \stackrel{D}{\longrightarrow} 
+      cos(x) \stackrel{D}{\longrightarrow} 
+    - sen(x) \stackrel{D}{\longrightarrow} 
+    - cos(x) \stackrel{D}{\longrightarrow}
+      sen(x) \stackrel{D}{\to} ...
+\end{equation}
+
+\begin{flalign}
+    \frac{d}{dx} sen(x) = cos(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} cos(x) = -sen(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} -sen(x) = -cos(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} -cos(x) = sen(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} tan(x) = sec^2(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} sec(x) = tan(x)sec(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} cotan(x) = -cossec^2(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} cosec(x) = -cotan(x)cosec(x) &&
+\end{flalign}
+
+
+
+
+\subsection{Derivadas de trigonométricas inversas}
+
+Passo a passo geral, onde \(trig\) é uma função trigonométrica qualquer e \(arctrig\) é sua inversa
+\begin{enumerate}
+    \item estabeleça o domínio de \(trig\)
+    \item note que \(y = trig(x) \iff arctrig(y) = x\)
+    \item Diferencie implicitamente
+    \item isole o \(y'\) como usualmente se faz e terá a derivada da inversa trigonométrica
+\end{enumerate}
+
+\begin{flalign}
+    \frac{d}{dx} arcsen(x) = \frac{1}{\sqrt{1 - x^2}} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} arccos(x) = - \frac{1}{\sqrt{1 - x^2}} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} arctan(x) = \frac{1}{1 + x^2} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} arccotan(x) = - \frac{1}{1 + x^2} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} arcsec(x) = \frac{1}{x \sqrt{x^2 - 1}} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} arccosec(x) = - \frac{1}{x \sqrt{x^2 - 1}} &&
+\end{flalign}
+
+\subsection{Derivadas de potencias}
+
+\begin{flalign}
+    \frac{d}{dx} x^x = x^x(ln(x) + 1),\quad para\; x>0 &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} g(x)^a = a.g(x)^{a-1}.g'(x) &&
+\end{flalign}
+
+\begin{flalign} 
+    \frac{d}{dx} a^{g(x)} = ln(a).a^{g(x)}.g'(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{d}{dx} f(x)^{g(x)} = \frac{d}{dx}  \, e^{g(x).ln(f(x))} &&
+\end{flalign}
+
+\begin{flalign}
+     = f(x)^{g(x)} . g'(x) . ln (f(x)) + f(x)^{g(x) - 1}.g(x).f'(x) &&
+\end{flalign}

@@ -1,0 +1,333 @@
+\chapter{Limites}
+
+\section{Regras}
+
+Seja \(C\) uma constante qualquer e suponha que 
+\noindent
+\begin{equation*}
+    \exists L_f ; \lim_{x \to a} f(x) = L_f
+    \quad
+    e
+    \quad
+    \exists L_g ; \lim_{x \to a} f(x) = L_g
+\end{equation*}
+    
+\begin{flalign}
+    \lim_{ x \to a } 
+        \left[
+            f(x) \pm g(x)
+        \right]
+    = 
+        \left[
+            \lim_{x \to a} f(x)
+        \right]
+            \pm 
+        \left[
+            \lim_{x \to a} f(x)]
+        \right]
+    = 
+        L_f + L_g &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{ x \to a } 
+        \left[
+            C.f(x)
+        \right]
+    = 
+        C . \left[
+                \lim_{x \to a} f(x)
+            \right]
+    = 
+        C.L_f &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{ x \to a } 
+        \left[
+            f(x) . g(x)
+        \right]
+    = 
+        \left[
+            \lim_{x \to a} f(x)
+        \right]
+        .
+        \left[
+            \lim_{x \to a} g(x)
+        \right]
+    = 
+        L_f . L_g &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{ x \to a } 
+        \left[
+            \frac{f(x)}{g(x)} 
+        \right]
+    = 
+        \left[
+            \frac{
+                \lim_{x \to a} f(x)
+            }{
+                \lim_{x \to a} g(x)
+            }    
+        \right]
+    = 
+        \left[
+            \frac{
+                L_f 
+            }{
+                L_g
+            }
+        \right]        
+    ,
+        \lim_{x \to a} g(x) \neq 0 &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{ x \to a } 
+        \left[
+            f(x)
+        \right]^n
+    = 
+        \left[
+            \lim_{x \to a} f(x)
+        \right]^n
+    = 
+        [L_f]^n &&
+\end{flalign}
+
+\subsection{Limite da composta}
+
+Sejam \(f\) e \(g\) duas funções tais que
+\begin{equation*}
+    \lim_{x \to a} g(x) = L_g 
+    \quad e \quad
+    \lim_{x \to a} f(x) = L_f
+\end{equation*}
+Se, para \(x\) próximos de a e \(x \neq a\) temos
+\begin{equation}
+    g(x) \in Df \quad e \quad g(x) \neq L_g
+    \implies \lim_{x \to a} (f \circ g)(x) = L_f 
+\end{equation}
+
+\subsection{Limite da composta (feat. continuidade)}
+Se
+\begin{enumerate}
+    \item \(\lim_{x \to a} g(x) = L_g\)
+    \item \(f\) \text{contínua em} \(L_g\)
+    \item \(g(x) \in Df\) para \(x\) próximos de \(a\) e \(x \neq a\)
+\end{enumerate}
+Então
+\begin{equation}
+    \lim_{x \to a} f(g(x)) 
+    = 
+    f \left(
+        \;
+        \lim_{x \to a} g(x)  
+        \;
+      \right)
+    = f (L_g)  
+\end{equation}
+a função \(f\) ``saí pra fora'' do limite
+\subsection{Mudança de variável}
+Considerando o limite:
+\begin{equation*}
+    \lim_{x \to a} f(g(x))
+\end{equation*}
+Se definirmos \(u = g(x)\),
+temos que
+\begin{equation}\label{md}
+    x \to a,\, u = g(x) \to b
+\end{equation}
+O que nos da que
+\begin{equation*}
+    \lim_{x \to a} f(g(x)) 
+    \stackrel{\ref{md}}{=}
+    \lim_{u \to b} f(u) 
+\end{equation*}
+Ou seja, nosso limite dado em função de \(x\) está agora em função de \(u\)
+\section{Limites fundamentais}
+
+\begin{flalign}
+    \lim_{x \to 0} \frac{\sin{x}}{x} = 1 &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to \pm \infty}\left(1+\frac{1}{x}\right)^{x} = e &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to 0}\frac{a^{x}-1}{x} = \ln{a} &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to 0}\frac{a^{x}-1}{x}=\ln a &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to 0^+}\frac{1}{x} = +\infty &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to 0^-}\frac{1}{x} = -\infty &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to \pm \infty}\frac{1}{x} = 0 &&
+\end{flalign}
+
+
+\subsection{Outros limites}
+
+\begin{flalign}
+    \lim_{x\to \pm \infty}\left(1+\frac{a}{x}\right)^{bx}= e^{ab} &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x\to \pm \infty} a^{\frac{1}{x}} = 1 &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x\to \pm \infty} \frac{\ln{n}}{n} = 0 &&
+\end{flalign}
+
+\begin{flalign}
+    \lim_{x \to 0} \frac{1 - \cos{x}}{x} = 0 &&
+\end{flalign}
+
+\section{Regras do infinito}
+Aqui considere:
+\begin{enumerate}
+    \item L é um numero qualquer \textbf{Diferente de 0}
+    \item \(L^+\) é um numero qualquer \textbf{estritamente} positivo
+    \item \(L^-\) é um numero qualquer \textbf{estritamente} negativo
+    \item \(\pm \infty\) como algum limite de alguma função \(f\)
+\end{enumerate}
+Temos que:
+\begin{flalign}
+    \infty + \infty = \infty &&
+\end{flalign}
+\begin{flalign}
+    \infty . \infty = \infty &&
+\end{flalign}
+\begin{flalign}
+    L + \infty = \infty &&
+\end{flalign}
+\begin{flalign}
+    \infty - L = \infty &&
+\end{flalign}
+\begin{flalign}
+    L^+ . \infty = \infty &&
+\end{flalign}
+\begin{flalign}
+    L^- . \infty = -\infty &&
+\end{flalign}
+\begin{flalign}
+    L^+ . -\infty = -\infty &&
+\end{flalign}
+\begin{flalign}
+    L^- . -\infty = +\infty &&
+\end{flalign}
+\begin{flalign}
+    -\infty - \infty = -\infty &&
+\end{flalign}
+\begin{flalign}
+    -\infty . (- \infty) = +\infty &&
+\end{flalign}
+
+\subsection{Indeterminações com infinitos}
+
+Assuma o mesmo que a seção anterior.
+As seguintes expressões são indet.:
+
+\begin{flalign}
+    \infty - \infty &&
+\end{flalign}
+\begin{flalign}
+    0 . \infty &&
+\end{flalign}
+\begin{flalign}
+    \frac{\pm\infty}{\pm\infty} &&
+\end{flalign}
+
+\begin{flalign}
+    \frac{0}{0} &&
+\end{flalign}
+
+\begin{flalign}
+    1^{\infty} &&
+\end{flalign}
+\begin{flalign}
+    \infty^{0} &&
+\end{flalign}
+\begin{flalign}
+    0^{0} &&
+\end{flalign}
+
+\section{Teorema que antecede o confronto}
+se temos que 
+\begin{equation*}
+    f(x) \leq g(x)
+\end{equation*}
+então
+\begin{equation}
+    \lim_{x \to a} f(x) 
+    \leq 
+    \lim_{x \to a} g(x)
+\end{equation}
+(se os limites existirem)
+\section{Teorema do confronto}
+sejam \(f\), \(g\) e \(h\) funções. Se temos que:
+\begin{enumerate}
+    \item \[f(x) \leq g(x) \leq h(x)\]
+    \item \[\lim_{x \to a} f(x) = L = \lim_{x \to a} h(x)\] 
+\end{enumerate}
+Temos que
+\begin{equation}
+    \lim_{x \to a} f(x)
+    \leq 
+    \lim_{x \to a} g(x) 
+    \leq 
+    \lim_{x \to a} h(x) 
+\end{equation}
+\begin{equation}
+    L 
+    \leq 
+    \lim_{x \to a} g(x) 
+    \leq 
+    L 
+\end{equation}
+O que implica que
+\begin{equation*}
+    \lim_{x \to a} g(x) = L
+\end{equation*}
+
+
+\section{Lei de L'Hôspital}
+
+sejam \(f\) e \(g\) funções diferenciáveis em um intervalo aberto \(I\) e algum \(c \in I\). Se:
+\begin{enumerate}
+    \item{ 
+        \[
+            \lim_{x \to c} f(x) = \lim_{x \to c} g(x)  = 0 
+        \]
+    }
+    Ou
+    \item{ 
+        \[
+            \lim_{x \to c} f(x) = \lim_{x \to c} g(x)  = \pm \infty 
+        \]
+    }
+\end{enumerate}
+ou seja, se tivermos que:
+\begin{equation*}
+    \lim_{x \to c} \frac{f(x)}{g(x)} = \frac{f(c)}{g(c)} = \frac{0}{0} 
+    \quad \text{ou} \quad
+    \lim_{x \to c} \frac{f(x)}{g(x)} = \frac{f(c)}{g(c)} = \pm \frac{\infty}{\infty}
+\end{equation*}
+Então
+\begin{equation}
+    \lim_{x \to c} \frac{f(x)}{g(x)} = 
+    \lim_{x \to c} \frac{f'(x)}{g'(x)} 
+\end{equation}

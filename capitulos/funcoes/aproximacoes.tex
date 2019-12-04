@@ -1,0 +1,63 @@
+\chapter{Aproximações}
+
+\section{Aproximação linear}
+
+Aproximamos uma função por sua reta tangente em algum ponto \(x\) por
+\begin{equation}
+    f(x) \approx L(x) = f'(a).(x-a) + f(a), \quad \text{para x próximos de a}    
+\end{equation}
+\begin{definition}
+    E definimos \(L(x)\) como \textbf{linearização de \(f\) em \(a\)}
+\end{definition}
+
+\section{Diferenciais}
+
+\begin{equation}
+    \Delta y = f(x + \Delta x) - f(x)
+\end{equation}
+
+\begin{definition}[Diferencial dx]
+    \begin{equation}
+        dx = \Delta x
+    \end{equation}
+    
+\end{definition}
+
+\begin{definition}[Diferencial dy]
+    \begin{equation}
+        dy = L(x + \Delta x) - L(x)
+    \end{equation}
+    
+\end{definition}
+
+\begin{equation}
+    \Delta y = f(x + \Delta x) - f(x) \approx L(x + \Delta x) - L(x)
+\end{equation}
+
+\begin{definition}[Erro relativo]
+    O erro relativo \(E\) da aproximação é dado por
+    \begin{equation}
+        E = \frac{\Delta y}{y}    
+    \end{equation}
+\end{definition}
+
+\section{Polinômio de Taylor}
+O polinômio de taylor \(T\) de ordem \(K\) de uma função \(f\) no ponto \(a\) é dada por:
+\begin{equation}
+    T_K(f(a)) = \sum_{n=0}^{K} \frac{f^{(n)}(a)}{n!}(x - a)
+\end{equation}
+Onde \(f^{(n)}\) é a \textit{n-ésima} derivada de \(f\). Temos:
+\begin{equation}
+    T_K(f(a)) = \frac{f^{(0)}(a)}{0!}(x - a) +
+           \frac{f^{(1)}(a)}{1!}(x - a) + ... +
+           \frac{f^{(K)}(a)}{K!}(x - a)
+\end{equation}
+Para o valor especifico de \(N= \infty\) e \(f\) infinitamente diferenciável:
+\begin{equation}
+    T(f(a)) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x - a)
+\end{equation}
+\begin{equation}
+    T(f(a)) = \frac{f^{(0)}(a)}{0!}(x - a) +
+           \frac{f^{(1)}(a)}{1!}(x - a) +
+           \frac{f^{(2)}(a)}{2!}(x - a) + ...
+\end{equation}

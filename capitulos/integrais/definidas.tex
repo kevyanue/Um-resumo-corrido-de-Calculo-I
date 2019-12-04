@@ -1,0 +1,82 @@
+\chapter{Integrais definidas}
+
+\section{Teorema fundamental do Calculo}
+
+\subsection{Teorema I}
+
+\begin{theorem}
+    Seja \(f\) contínua em \([a,b]\) e diferenciável em \((a,b)\). então a função \(g\)definida por
+    
+    \begin{equation}
+        g(x) = \int_{a}^{x} f(t) dt ,\quad a \leq x \leq b
+    \end{equation}
+    Então
+    \begin{equation}
+        g'(x) = f(x)
+    \end{equation}    
+\end{theorem}
+
+
+
+\subsection{Teorema II}
+\begin{theorem}
+    \begin{equation}
+        \int_{a}^{b} f(x) dx = F(a) - F(b),\quad F'(x) = f(x)
+    \end{equation}
+\end{theorem}
+
+
+\section{Propriedades}
+
+\subsection{Igualdades}
+
+Assuma \( a > b\). Temos:
+
+\begin{flalign}
+    \int_b^a f(x)\; dx = - \int_a^b f(x) &&
+\end{flalign}
+
+\begin{flalign}
+    \int_a^a f(x)\; dx = 0 &&
+\end{flalign}
+
+\begin{flalign}
+    \int_b^a c\; dx = c(b - a) &&
+\end{flalign}
+
+\begin{flalign}
+    \int_b^a [f(x) \pm g(x) ] dx = 
+    \int_b^a f(x)\; dx \pm 
+    \int_b^a g(x)\; dx  &&
+\end{flalign}
+
+\begin{flalign}
+    \int_b^a c.f(x) dx = c\int_b^a f(x)\; dx &&
+\end{flalign}
+
+\begin{flalign}
+    \int_a^c f(x)\; dx + \int_c^b f(x)\; dx = \int_a^b f(x)\;dx &&
+\end{flalign}
+
+\subsection{Desigualdades}
+
+\begin{flalign}
+    \text{Se \(f(x) > 0 \) para \( a \leq x \leq b \implies\)} &&
+\end{flalign}
+\begin{equation}
+    \int_a^b f(x)\; dx > 0
+\end{equation}
+
+\begin{flalign}
+    \text{Se \(f(x) > g(x) \) para \( a \leq x \leq b \implies\)} &&
+\end{flalign}
+\begin{equation}
+    \int_a^b f(x)\; dx > \int_a^b g(x)\; dx 
+\end{equation}
+
+\begin{flalign}
+    \text{Se \( m \leq f(x) \leq M \) para \( a \leq x \leq b \implies\)} &&
+\end{flalign}
+\begin{equation}
+    m(b - a ) \leq \int_a^b f(x)\; dx \leq M(b - a)
+\end{equation}

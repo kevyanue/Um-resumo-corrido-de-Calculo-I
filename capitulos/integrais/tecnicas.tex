@@ -1,0 +1,287 @@
+\chapter{Técnicas de integração}
+
+\section{Integrais trigonométricas}
+
+\subsection{\(sen^n(x).cos^m(x)\)}
+
+\subsubsection{\(m\) é impar}
+
+\begin{flalign}
+    \int sen(x)^n.cos^m(x)\; dx &&
+\end{flalign}
+se \(m\) é impar \(\implies\) \(m = 2k + 1\)
+\begin{flalign}
+    \int sen(x)^n.cos^{2k + 1}(x)\; dx = &&
+\end{flalign}
+\begin{flalign}
+    \int sen(x)^n.(cos^{2}(x))^kcos^{1}(x)\; dx = &&
+\end{flalign}
+Utilizando a identidade \( cos^2(x) = 1 - sen^2(x)\),
+\begin{flalign}
+    \int sen(x)^n.(1 - sen^2(x))^k cos^{1}(x)\; dx &&
+\end{flalign}
+Daí, tomando \( u = sen(x)\), temos \( du = cos(x)dx\) e segue que:
+\begin{flalign}
+    \int u^n.(1 - u^ 2)^k u\; du &&
+\end{flalign}
+
+\subsubsection{\(n\) é impar}
+
+O processo é análogo, 
+
+\begin{enumerate}
+    \item Guarde um fator seno
+    \item Use a identidade \( sen^2(x) = 1 - cos^2(x) \)
+    \item Substitua \( u = cos(x) \)
+    \item Resolva a integral
+\end{enumerate}
+
+\subsubsection{\(n\) e \(m\) são pares}
+
+Utilizamos as identidades:
+\begin{gather}
+    sen^2(x) = \frac{1}{2} ( 1 - cos(2x)) \\
+    cos^2(x) = \frac{1}{2} ( 1 - sen(2x)) \\
+    cos(x)sen(x) = \frac{1}{2} sen(2x)
+\end{gather}
+
+\subsection{\(sen(mx).cos(nx)\)}
+
+\begin{flalign}
+    \int sen(mx).cos(nx)\; dx &&
+\end{flalign}
+Utilizamos a seguinte Identidade:
+
+\begin{equation}
+    sen(a)cos(b) = 
+    \frac{1}{2} 
+    [
+    sen(a - b)
+    +
+    sen(a + b
+    ]
+\end{equation}
+
+\begin{flalign}
+    \int sen(mx).sen(nx)\; dx &&
+\end{flalign}
+Utilizamos a seguinte Identidade:
+
+\begin{equation}
+    sen(a)sen(b) = 
+    \frac{1}{2} 
+    [
+    cos(a - b)
+    -
+    cos(a + b
+    ]
+\end{equation}
+
+\begin{flalign}
+    \int cos(mx).cos(nx)\; dx &&
+\end{flalign}
+Utilizamos a seguinte Identidade:
+
+\begin{equation}
+    sen(a)sen(b) = 
+    \frac{1}{2} 
+    [
+    cos(a - b)
+    +
+    cos(a + b
+    ]
+\end{equation}
+
+\subsection{\(tan^n(x).sec^m(x)\)}
+
+\subsubsection{\(n\) é par}
+\begin{enumerate}
+    \item Guarde um fator \(sec^2(x)\)
+    \item use que \(sec^2(x) = 1 + tan^2(x)\)
+    \item substitua u = tan(x)
+\end{enumerate}
+
+\subsubsection{\(n\) é impar}
+
+\begin{enumerate}
+    \item Guarde um fator \(sec(x)tan(x)\)
+    \item use que \(tan^2(x) = sec^2(x) - 1\)
+    \item substitua u = sec(x)
+\end{enumerate}
+
+\subsubsection{\(n\) par e \(m\) ímpar}
+
+\begin{enumerate}
+    \item Expresse tudo em termos da secante
+    \item Resolva as potencias da secante integrando por partes
+\end{enumerate}
+
+utilizando as integrais primitivas:
+\begin{flalign}
+    \int tan(x)\; dx = ln(|sec(x)|) + c
+\end{flalign}
+\begin{flalign}
+    \int sec(x)\; dx = ln(|sec(x)|) + tan(x) + c
+\end{flalign}
+
+\section{Substituição trigonométrica}
+
+\subsection{\(\sqrt{a^2 - x^2}\)}
+Substitua:
+
+\begin{equation}
+    x = a.sen(\theta)
+\end{equation}
+com o triangulo representado por:
+\begin{equation}
+    a^2 = (\sqrt{a^2 - x^2})^2 + x^2
+\end{equation}
+
+\subsection{\(\sqrt{a^2 - x^2}\)}
+Substitua:
+
+\begin{equation}
+    x = a.tan(\theta)
+\end{equation}
+com o triangulo representado por:
+\begin{equation}
+    (\sqrt{a^2 + x^2})^2 = a^2 + x^2
+\end{equation}
+
+\subsection{\(\sqrt{x^2 - a^2}\)}
+Substituía:
+
+\begin{equation}
+    x = a.sec(\theta)
+\end{equation}
+com o triangulo representado por:
+\begin{equation}
+    x^2 = (\sqrt{x^2 - a^2})^2 + a^2 
+\end{equation}
+
+
+\section{Funções racionais}
+
+Temos a integral 
+
+\begin{equation}
+    \int \frac{p(x)}{q(x)}\; dx
+\end{equation}
+
+Se \(grau(p) > grau(q)\) então efetuamos a divisão o que nos da temos:
+
+\begin{equation}
+    f(x) = \frac{p(x)}{q(x)} = \frac{r(x)}{q(x)} + s(x) 
+\end{equation}
+Onde \(grau(r) > grau(q)\). E nossa integral se transforma em:
+\begin{equation}
+    \int f(x) = \int \left( \frac{r(x)}{q(x)} + s(x)\; \right) dx
+\end{equation}
+E daí temos que:
+\begin{equation}
+    \int f(x) = \int \frac{r(x)}{q(x)}\; dx + \int s(x)\; dx 
+\end{equation}
+fatorando ambos os polinômios de \(q(x)\) temos que:
+
+\begin{equation}
+    \textstyle
+    f(x) = \frac{
+        r(x)
+    }{
+        (a_1x + b_1)^{n_1}
+        \cdot ... \cdot 
+        (a_kx + b_k)^{n_k}
+        \cdot
+        (d_1x^2 + e_1x + f_1)^{m_1}
+        \cdot ... \cdot 
+        (d_lx^2 + e_lx + f_l)^{m_l}
+    }
+\end{equation}
+Onde cada \(a_ix + b_i, i = 1...k\), são equações lineares, e as equações \(d_jx^2 + e_jx + f_j, j = 1...l\), são equações de segundo grau irredutíveis \(( \Delta < 0 )\).
+Queremos cada componente da fatoração como:
+\\
+\\
+se a \(c_n(x)\) é a \textit{n-ésima} componente da fatoração de \(q(x)\) e tivermos \(c_n(x) = (a_ix + b_i)^k\) fatoramos como:
+\begin{equation*}
+    c_n(x) = 
+        \frac{A_1}{(a_1x + b_1)^1} +
+        \frac{A_2}{(a_2x + b_2)^2} + ... + 
+        \frac{A_n}{(a_nx + b_n)^n}
+\end{equation*}
+que denotamos como:
+\begin{equation}
+    c_n(x) = \sum_{ i = 1}^{n} \frac{A_i}{(a_1x + b_1)^i}
+\end{equation}
+se a \(d_n(x)\) é a \textit{n-ésima} componente da fatoração de \(q(x)\) e tivermos \(d_n(x) = (a_jx^2 + b_jx + c_j)^l\) fatoramos como:
+\begin{equation}
+    d_n(x) = 
+        \frac{B_1x + C_1}{(c_1x^2 + d_1x + e_1)^1} +
+        \frac{B_2x + C_2}{(c_2x^2 + d_2x + e_2)^2} + ... + 
+        \frac{B_nx + C_m}{(c_mx^2 + d_mx + e_m)^m}
+\end{equation}
+que denotamos como:
+\begin{equation}
+    d_n(x) = \sum_{j = 1}^{m} \frac{B_jx + C_j}{(c_jx^2 + d_jx + e_j)^j}
+\end{equation}
+Temos uma fatoração de \(f(x)\) de tal forma:
+\begin{equation}
+    \frac{p(x)}{q(x)} =
+    \sum_{u = 1}^{v} 
+        c_u(x) + 
+    \sum_{w = 1}^{z} 
+        d_w(x)
+\end{equation}
+teremos os coeficientes \(A_p, B_q, C_r\) resolvendo o sistema linear que decorre de:
+\begin{equation}
+    q(x) = 
+        p(x)
+            \left(
+                \sum_{u = 1}^{v} 
+            c_u(x) + 
+                \sum_{w = 1}^{z} 
+            d_w(x)
+            \right)
+\end{equation}
+Descobertos os coeficientes das equações, teremos que:
+\begin{equation}
+    f(x) = 
+        s(x) + \frac{p(x)}{q(x)}
+\end{equation}
+\begin{equation}
+    f(x) = 
+        s(x) + 
+        \sum_{u = 1}^{v} 
+            c_u(x) + 
+        \sum_{w = 1}^{z} 
+            d_w(x)
+\end{equation}
+o que nos da finalmente que
+\begin{equation}
+    \int f(x) dx = 
+        \int s(x)dx + 
+        \int 
+            \left(
+                \sum_{u = 1}^{v} c_u(x)
+            \right)
+        dx
+        + 
+        \int 
+            \left(
+                \sum_{w = 1}^{z} d_w(x)
+            \right)
+        dx
+\end{equation}
+e como sabemos integral o polinômio \(s(x)\) e cada polinômio \(c_u\) e \(d_w\), temos uma integral simplificada.
+\section{Substituição racionalizante}
+
+Se tivermos:
+\begin{equation}
+    \int \sqrt[\leftroot{-3}\uproot{3}n]{g(x)}\; dx
+\end{equation}
+Substituímos \( u = \sqrt[\leftroot{-3}\uproot{3}n]{g(x)} \)
+\\
+Se tivermos \(f(x)\) um quociente entre 2 polinomios com potencias fracionarias de x, então fazemos a substituição 
+\begin{equation}
+    x = t^k
+\end{equation} 
+Onde \(k\) é denominador comum entre as frações potencia de \(x\)

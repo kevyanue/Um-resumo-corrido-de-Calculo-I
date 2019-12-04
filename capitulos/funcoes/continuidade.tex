@@ -1,0 +1,140 @@
+\chapter{Continuidade}
+
+\section{Continuidades}
+
+\subsection{Continuidade num ponto}
+\begin{definition}
+    Dizemos que \(f\) é continua em um ponto \(a\) se:
+    
+    \begin{equation}
+       \lim_{x \to a} f(x) = f(a) 
+    \end{equation}
+    
+\end{definition}
+
+\subsection{Continuidade a direita}
+
+\begin{definition}
+    Se
+    \begin{equation}
+       \lim_{x \to a^+} f(x) = f(a)  
+    \end{equation}
+    Então f é continua a direita do ponto a
+\end{definition}
+
+\subsection{Continuidade a esquerda}
+
+\begin{definition}
+    Se
+    \begin{equation}
+       \lim_{x \to a^-} f(x) = f(a)  
+    \end{equation}
+    Então f é continua a esquerda do ponto a
+\end{definition}
+
+\subsection{Continuidade em intervalos}
+
+\begin{definition}
+    Dizemos que \(f\) é continua em um intervalo aberto \( I = (a, b)\) se:
+    
+    \begin{equation}
+       \lim_{x \to c} f(x) = f(c),\quad \forall c \in I
+    \end{equation}
+    
+\end{definition}
+
+\begin{definition}
+    Dizemos que \(f\) é continua em um intervalo fechado \( I = [a, b]\) se:
+    
+    \begin{equation}
+       \lim_{x \to c} f(x) = f(c),\quad \forall c \in I
+    \end{equation}
+    
+\end{definition}
+
+
+\section{Descontinuidades}
+
+\subsection{Descontinuidades removíveis}
+
+\begin{definition}
+    Se
+    \begin{equation*}
+        \exists L; \quad \lim_{x \to a} f(x) = L
+    \end{equation*}
+    E
+    \begin{center}
+        \(f(a) \neq L\) ou \(f(a)\) não existe
+    \end{center}
+    Então a descontinuidade é removível se redefinirmos \(f(a)\) como sendo \(L\)
+\end{definition}
+
+\subsection{Descontinuidades essenciais}
+
+
+\begin{definition}
+    Se
+    \begin{equation*}
+        \exists L; \quad \lim_{x \to a} f(x) = L
+    \end{equation*}
+    E
+    \begin{center}
+        \(f(a) \neq L\) ou \(f(a)\) não existe
+    \end{center}
+    Então a descontinuidade é removível se redefinirmos \(f(a)\) como sendo \(L\)
+\end{definition}
+
+\subsubsection{Descontinuidade de pulo}
+
+\begin{definition}
+    Se
+    \begin{equation}
+       \lim_{x \to a^+} f(x) \neq \lim_{x \to a^-}
+    \end{equation}
+    Então dizemos que a função tem descontinuidade do tipo pulo
+\end{definition}
+
+\subsubsection{Descontinuidade infinita}
+
+\begin{definition}
+    Se
+    \begin{equation}
+       \lim_{x \to a^{\pm}} f(x) = \pm \infty
+    \end{equation}
+    Então dizemos que a função tem descontinuidade do tipo infinito
+\end{definition}
+
+
+\section{Regras de continuidade}
+
+Sejam \(f\) e \(g\) funções contínuas em um intervalo \(I\) e \(c\) uma constante qualquer.
+Vale que são continuas as funções:
+
+\begin{flalign}
+    (f \pm g)(x) &&
+\end{flalign}
+\begin{flalign}
+    (c.f)(x) &&
+\end{flalign}
+\begin{flalign}
+    (f.g)(x) &&
+\end{flalign}
+\begin{flalign}
+    \left(
+        \frac{f}{g}
+    \right)
+    (x), \; g(x) \neq 0, \forall x \in I &&
+\end{flalign}
+\begin{flalign}
+    (f \circ g)(x), \text{se f contínua em g(x)}, \forall x \in I &&
+\end{flalign}
+\begin{flalign}
+    (f^{-1})(x),\; \text{se f é injetora}  &&
+\end{flalign}
+Também são continuas as funções
+\begin{enumerate}
+    \item Polinomiais
+    \item Racionais
+    \item Exponenciais e Logarítmicas
+    \item Trigonométricas
+\end{enumerate}

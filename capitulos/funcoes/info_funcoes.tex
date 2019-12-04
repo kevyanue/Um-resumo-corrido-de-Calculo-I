@@ -1,0 +1,217 @@
+\chapter{Como conseguir informações sobre funções}
+
+\section{Máximo e Mínimo}
+
+\begin{definition}[ponto e valor de máximo absoluto]
+    Seja \(c \in Df\). Dizemos que \(c\) é (\textit{ponto de}) máximo absoluto ou (\textit{ponto de}) máximo global se:
+    
+    \begin{equation}
+        f(c) \geq f(x), \forall x \in Df
+    \end{equation}
+    e denominamos o número \(M = f(c)\) como o \textbf{valor} de máximo absoluto.
+\end{definition}
+
+\begin{definition}[ponto e valor de mínimo absoluto]
+    A definição é análoga para mínimo absoluto e valor de mínimo absoluto
+\end{definition}
+
+\begin{definition}[ponto e valor de máximo local]
+    Seja \(I \subset Df\) um intervalo aberto. Dizemos que \(c\) é (\textit{ponto de}) máximo local ou (\textit{ponto de}) máximo relativo se:
+    
+    \begin{equation}
+        f(c) \geq f(x), \forall x \in I
+    \end{equation}
+    e denominamos o número \(M = f(c)\) como o \textbf{valor} de máximo local.
+\end{definition}
+
+\begin{definition}[ponto e valor de mínimo local]
+    A definição é análoga para mínimo local e valor local
+\end{definition}
+
+\section{Ponto crítico}
+
+\begin{definition}
+    se \(f'(c) = 0\) ou \(f'(c)\) não existe então \(c\) é um ponto crítico.
+\end{definition}
+
+\section{Crescente e Decrescente}
+
+\begin{theorem}
+    Suponha \(f\) é diferenciável num intervalo aberto \(I\). Vale que:
+    \begin{enumerate}
+        \item Se \(f'(x) > 0, \forall x  \in I\) então f é crescente em I
+        \item Se \(f'(x) < 0, \forall x  \in I\) então f é decrescente em I
+        \item \(f'(x) = 0, \forall x  \in I\) então f é constante em I
+    \end{enumerate}
+\end{theorem}
+
+\section{Assintotas}
+
+\subsection{Horizontal}
+
+\begin{definition}
+    \begin{equation}
+        \lim_{x \to \pm \infty} f(x) = L \implies \text{a reta} y = L \text{ é assintota horizontal de \(f\)}
+    \end{equation}
+\end{definition}
+
+\subsection{Vertical}
+
+\begin{definition}
+    \begin{equation}
+        \lim_{x \to a^{\pm}} f(x) = \pm \infty \implies \text{a reta} x = a \text{ é assintota vertical de \(f\)}
+    \end{equation}
+\end{definition}
+Podemos achar as assintotas verticais da seguinte maneira
+\begin{method}
+    Seja \(P\) o conjunto dos pontos onde dado um numero qualquer \( a \in P\), temos que:
+    \begin{enumerate}
+        \item \(a \notin Df\) ou
+        \item \(f\) descontinua em \(a\)
+    \end{enumerate}
+    Testando os limites laterais em cada um dos \( a \in P\) nos da todas as assintotas verticais.
+\end{method}
+
+\subsection{Oblíqua}
+
+\begin{definition}
+    \begin{equation}
+        \lim_{x \to \pm \infty} [f(x) - (mx + b)] = 0, m \neq 0 \implies 
+    \end{equation}
+    \centering
+    a reta \( y = mx + b\) é assintota oblíqua
+\end{definition}
+Para encontrar assintota obliqua:
+\begin{method}
+    Se existir \(m\) e \(b\) tal que:
+    \begin{enumerate}
+        \item 
+            \begin{equation}
+                \lim_{x \to \pm \infty}  \frac{f(x)}{x} = m
+            \end{equation}
+        \item
+            \begin{equation}
+                \lim_{x \to \pm \infty}  f(x) - mx = b
+            \end{equation}
+    \end{enumerate}
+    Então
+    \(y = mx + b\) é uma assintota obliqua
+\end{method}
+
+\section{Encontrar máx. ou mín.}
+
+\subsection{intervalo fechado pra valores absoluto}
+
+\begin{method}
+    Seja \(f\) uma função contínua em um intervalo \([a,b]\).
+    Podemos encontrar o máximo e mínimo absoluto da seguinte forma
+    
+    \begin{enumerate}
+        \item encontre os valores de \(f\) nos pontos criticos em \((a,b)\)
+        \item encontre os valores de \(f(a)\) e \(f(b)\) (extremos do intervalo)
+        \item O menor valor dos números é o valor absoluto e o menor valor é o mínimo absoluto
+        
+    \end{enumerate}    
+\end{method}
+
+
+
+\subsection{Teste da primeira derivada}
+\begin{method}
+    Seja \(f\) uma função continua e \(c\) um ponto critico. Temos que:
+    \begin{enumerate}
+        \item se o sinal de \(f'\) mudar de positivo pra negativo em \(c\) \(\implies\) \(c\) é ponto de máximo local
+        \item se o sinal de \(f'\) mudar de negativo pra positivo em \(c\) \(\implies\) \(c\) é ponto de máximo local
+        \item se o sinal de \(f'\) não mudar, então \(c\) não é ponto de máximo nem de mínimo
+    \end{enumerate}    
+\end{method}
+
+
+
+\subsection{Teste da segunda derivada}
+
+\begin{method}
+    Suponha \(f'(c) = 0\), ou seja, as raizes de \(f'(x)\) , e que \(f''(c)\) existe. Então temo que:
+    
+    \begin{enumerate}
+        \item se \(f''(c) > 0 \implies\) f(c) é um valor de mínimo local
+        \item se \(f''(c) < 0 \implies\) f(c) é um valor de máximo local
+    \end{enumerate}    
+\end{method}
+O teste falha quando:
+\begin{enumerate}
+    \item \(\nexists f'(c)\)
+    \item \(f''(c) = 0\)
+    \item \(\nexists f''(c)\)
+\end{enumerate}
+
+\section{Concavidade}
+
+\subsection{Teste de concavidade}
+
+\begin{enumerate}
+    \item \(f''(x) > 0,\, \forall x \in I \implies f\) em \(I\) é côncavo para cima
+    \item \(f''(x) < 0,\, \forall x \in I \implies f\) em \(I\) é côncavo para baixo
+\end{enumerate}
+
+\begin{remark}
+    Note que:\\
+    \(f''(x) = 0,\, \forall x \in I \\
+    \implies f'(x) = c \\
+    \implies f(x) = cx + d \\ 
+    \implies f\) é reta afim e não tem concavidade
+\end{remark}
+
+\subsection{Ponto de inflexão}
+
+\begin{definition}
+    Um ponto \(P\) onde a curva \(y = f(x)\) é chamado de \textit{Ponto de Inflexão} se:
+    \begin{enumerate}
+        \item se \(f\) for contínua em \(P\)
+        \item e a curva mudar de concavidade em \(P\)
+    \end{enumerate}
+\end{definition}
+
+
+\section{Construção do gráfico}
+
+
+\begin{method}
+    O algoritmo para construção do gráfico:
+    \begin{enumerate}
+        \item Determine o Domínio \(Df\) de \(f\)
+        \item Determine onde existe intersecção com os eixos, os pontos:
+            \begin{enumerate}
+                \item onde \(f(x) = 0\)
+                \item e o ponto \(f(0)\)
+            \end{enumerate}
+        \item Se existe Simetria.  Se ela é
+            \begin{enumerate}
+                \item Par: \(f(-x) = f(x), \forall x \in Df \implies\) gráfico simétrico em relação ao eixo \(y\)
+                \item Impar: \(f(-x) = -f(x), \forall x \in Df \implies\) gráfico simétrico em relação a reta \(y = -x\)
+                \item Periódico: \(f(x + p) = f(x), \forall x \in Df \implies\) o gráfico se repete em cada intervalo e comprimento \(p\) 
+            \end{enumerate}
+        \item Determinar as assintotas
+            \begin{enumerate}
+                \item Horizontais
+                \item verticais
+                \item Oblíquas
+            \end{enumerate}
+            \begin{remark}
+                se existe assintota horizontal \(\implies\) não existe assintota obliquá
+            \end{remark}
+        \item Intervalos crescentes e decrescentes
+        \item Pontos e valores de máximo e mínimo
+        \item Concavidade e pontos de inflexão
+        \item Esboçe a curva:
+            \begin{enumerate}
+                \item Marque as assintotas
+                \item Marque todos os pontos que achou
+                \item Marque os intervalos de concavidade e crescimento/decrescimento
+                \item Desenha a curva atendendo aos que esta marcado
+            \end{enumerate}
+            
+    \end{enumerate}
+    
+    
+\end{method}
